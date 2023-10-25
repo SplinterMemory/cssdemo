@@ -1,0 +1,21 @@
+body {
+  background-image: url(./img/bg.jpg);
+}
+h2 {
+  /* làm trong suốt phần tử bao gồm cả nền */
+  /* vẫn chiếm vị trí trên giao diện nếu opacity = 0, vẫn tương tác được */
+  /* opacity: 0.5; */
+  background-color: blue;
+  /* ẩn phần tử khỏi giao diện, xóa cả không gian nó đang chiếm, ko thể tương tác */
+  /* display: none; */
+  /* giống với opacity: ko nhìn thấy vẫn chiếm ko gian, nhưng khác là ko tương tác được */
+  visibility: hidden;
+  /* ẩn cả cha, ẩn cả con */
+  /* visibility có tính thừa kế (inspect chọn thẻ h2 -> có chữ inherited from h2) */
+}
+
+span {
+  /* opacity: 1; */
+  /* display: block; */
+  visibility: visible;
+}

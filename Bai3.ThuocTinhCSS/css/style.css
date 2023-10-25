@@ -1,0 +1,12 @@
+h1 {
+  color: blueviolet;
+  font-style: italic;
+  font-family: Arial, Helvetica, sans-serif;
+  /* chuyển hoa thường */
+  text-transform: capitalize;
+  /* căn giữa */
+  text-align: center;
+  font-size: 10px;
+  /* định dạng khoảng cách các dòng = x lần font chữ */
+  line-height: 1.2;
+}

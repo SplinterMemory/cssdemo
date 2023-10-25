@@ -1,0 +1,12 @@
+h1 {
+  color: red;
+  /* không thể bôi đen */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* search gg =>  autoprefix css => 
+sử dụng caniuse.com để biết thuộc tính nào cần prefix
+dấu -: hỗ trợ với prefix
+đỏ: ko hỗ trợ */
+}

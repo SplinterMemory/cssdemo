@@ -1,0 +1,15 @@
+img {
+  /* nếu có tác động làm thay đổi trạng thái của img sẽ delay 1.5s để biến đổi từ trạng thái ban đầu đến kết quả  */
+  transition: 1.5s;
+  /* display:none sẽ không hỗ trợ animation */
+}
+input:checked ~ img {
+  /* 1.Biến mất khỏi giao diện, ko chiếm không gian */
+  /* display: none; */
+  /* 2.Ẩn khỏi giao diện nhưng vẫn chiếm vị trí */
+  /* visibility: hidden; */
+  /* 3. Làm mờ đi sau đó ẩn hẳn khỏi giao diện và không tương tác được: dùng thêm visibility*/
+  /* khi ấn chuột phải vẫn sao chép được địa chỉ hình ảnh */
+  opacity: 0;
+  visibility: hidden;
+}

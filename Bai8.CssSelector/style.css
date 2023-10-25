@@ -1,0 +1,23 @@
+/* id là duy nhất và ko cho phép đặt trùng id đã có */
+/* theo quy chuẩn ko cho phép đặt trùng */
+#doan-van2 {
+  color: red;
+  font-size: 20px;
+}
+
+h1 {
+  color: blue;
+}
+
+h2.demo {
+  /* chỉ tác động lên h2 có class là demo */
+  color: red;
+}
+
+.demo2 {
+  font-size: 40px;
+}
+
+.item_ul_1 {
+  list-style: none;
+}

@@ -1,0 +1,60 @@
+có 3 nơi đặt css
+_ css inline: nội tuyến <tag style="css">
+_ css internal : nội bộ <style> css </style>
+_ css external : bên ngoài <link href ="style.css">
+
+css inline: cách viết mã ngay bên trong html
+selector: thuộc tính: giá trị
+
+internal (css nội bộ): cách viết mã css trong cặp thẻ style (đặt trong khối head)
+search vscode emmet inline new line
+a * 3
+
+css external: trường hợp muốn áp dụng cho toàn bộ file html nằm trong trang wweb
+tránh phải copy css ra tất cả các file 
+link:css
+<link ref ="stylesheet" href="style.css">
+nhấn ctrl + click vào style.css sẽ tự động tạo file
+
+*) độ ưu tiên: inline> internal và external
+internal và external: ở trên thẻ head, cái nào viết sau sẽ tái định nghĩa (ghi đè) lại cái viết trước
+
+*) thuộc tính css
+
+vào file -> preferences -> keyboard shortcuts => gõ line com 
+_ opacity: quy định độ trong suốt
+0.0 -> 1.0
+0% -> 100%
+làm trong suốt phần tử bao gồm cả nền 
+vẫn chiếm vị trí trên giao diện nếu opacity = 0, vẫn tương tác được
+_ display: none: ẩn phần tử khỏi giao diện, xóa cả không gian nó đang chiếm, không thể tương tác
+_ visibility: ẩn hoặc hiện element
+giống với opacity: ko nhìn thấy vẫn chiếm ko gian, nhưng ko tương tác được
+_ ẩn cả cha, ẩn cả con
+_ chỉ có visibility có tính thừa kế (inspect chọn thẻ h2 -> có chữ inherited from h2) 
+_ riêng display none không hỗ trợ animation (xem ở w3s)
+
+*) tình huống sử dụng opacity, display, visibility
+
+
+*) favicon: gõ link:favicon: đường link dẫn đến favicon
+logo thương hiệu trang web
+search với từ khóa: make favicon online
+
+*) css prefix: css có nhiều thuộc tính và không phải thuộc tính nào cũng hỗ trợ tất cả trình duyệt
+tìm vendor prefix css
+cài thêm tiện ích live preview
+chuột phải vào file html => chọn show preview (không phải F1 tìm file server preview)
+search gg =>  autoprefix css => 
+sử dụng caniuse.com để biết thuộc tính nào cần prefix
+dấu -: hỗ trợ với prefix
+đỏ: ko hỗ trợ
+*) tagname, id và class
+id: duy nhất
+tìm từ khóa validator html
+
+*) bộ chọn kết hợp: combinator selector
+(*selector và element.class)
+*selector : chọn tất cả các element
+
+element.class: p.intro => chọn tất cả các thẻ p có class là intro
