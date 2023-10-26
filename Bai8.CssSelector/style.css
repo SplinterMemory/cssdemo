@@ -1,23 +1,68 @@
 /* id là duy nhất và ko cho phép đặt trùng id đã có */
 /* theo quy chuẩn ko cho phép đặt trùng */
 #doan-van2 {
-  color: red;
+  color: cyan;
   font-size: 20px;
 }
 
-h1 {
+h1,
+h2 {
+  /* bộ chọn kết hợp element, element (cách nhau bởi dấu phẩy) */
   color: blue;
 }
 
+p,
 h2.demo {
+  /* thẻ p , các phần tử h2 có class demo */
   /* chỉ tác động lên h2 có class là demo */
-  color: red;
+  color: blueviolet;
 }
 
-.demo2 {
-  font-size: 40px;
+.demo2,
+#doan-van3 {
+  /*các phẩn tử có class demo2 và phần từ có id là doan-van3*/
+  font-size: 30px;
 }
 
 .item_ul_1 {
   list-style: none;
+}
+
+.demo.demo3 {
+  /* tác động lên thẻ có đủ 2 class này (giống điều kiện and) */
+  color: red;
+}
+
+div p {
+  /* tất cả thẻ p nằm trong class loi chuc (bao gồm cháu chắt chút chít) */
+  color: darkorange;
+}
+
+div > p {
+  /* thẻ p là con trực tiếp của thẻ div (thụt vào 1 cấp) */
+  color: #f62682;
+}
+
+.loichuc p {
+  /* tất cả thẻ p nằm trong class loi chuc */
+  font-size: 25px;
+}
+
+h1 + h2 {
+  /* tác động đến thẻ h2 đứng sát ngay sau thẻ h1 */
+  color: #20e3b2;
+}
+
+.demo4.demo5 + h3,
+h4 {
+  /* tác động đến thẻ h3 đứng sát ngay class demo4 */
+  /* có 2 dòng được tác động vì ở ngay trên cũng có thẻ h3 đứng sát ngay sau class demo4 */
+  /* => phải thêm vào selector class demo5 để phân biệt */
+  color: lawngreen;
+  /* tác động lên toàn bộ thẻ h3 đứng sát ngay sau class và thẻ h4 */
+}
+div ~ a {
+  color: firebrick;
+  /* tất cả thẻ a nằm sau thẻ div */
+  /* không quan tâm có sát đít hay không */
 }

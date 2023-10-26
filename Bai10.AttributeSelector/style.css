@@ -1,0 +1,37 @@
+[href] {
+  /* chọn tất cả các thẻ có thuộc tính là href */
+  color: red;
+}
+
+a[href] {
+  /* tác động lên thẻ a có thuộc tính là href */
+  color: blue;
+}
+
+a[target="blank"] {
+  /* chỉ tác động vào thẻ a có target = blank */
+  color: darkgoldenrod;
+}
+
+a[title~="trangchu"] {
+  /* chỉ tác động đến thẻ a có title chứa từ trangchu */
+  /* trangchu phải đứng đơn lẻ */
+  color: aquamarine;
+}
+a[title*="lienhe"] {
+  /* chỉ tác động đến thẻ a có title chứa từ lienhe */
+  /*lienhe không cần đứng đơn lẻ*/
+  color: blueviolet;
+}
+a[title|="pic"] {
+  /* tác động thẻ a: Title bắt đầu bằng từ pic, nếu có nhiều thì phải nối nhau = dấu - */
+  color: burlywood;
+}
+a[title^="snow"] {
+  /* chỉ tác động đến thẻ a: Title bắt đầu bằng từ pic, có thể có nhiều từ  đằng sau */
+  color: chartreuse;
+}
+a[title$="22"] {
+  /* chỉ tác động đến thẻ a: Title kết thúc bằng kí tự "2" */
+  color: crimson;
+}

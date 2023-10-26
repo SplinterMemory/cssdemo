@@ -1,0 +1,73 @@
+p:hover {
+  /* tác động lên selector khi di chuột qua */
+  color: blue;
+}
+
+#line2:hover {
+  /* class cũng tương tự */
+  color: red;
+}
+
+.di_chuot:active {
+  /* tác động lên selector khi nhấn và giữ chuọt */
+  color: blueviolet;
+  font-size: 18px;
+}
+
+.click_me:link {
+  /* tác dụng lên selector khi chưa click vào truy cập */
+  /* thay màu mặc định, người dùng chưa truy cập vào */
+  color: chocolate;
+}
+
+.click_me:visited {
+  /* tác dụng lên selector khi đã click vào truy cập */
+  color: aqua;
+}
+
+.div_elm:empty {
+  width: 200px;
+  height: 200px;
+  background-color: blue;
+}
+
+h2:target {
+  /* khi  click vào thẻ a có id là nó */
+  /* ví dụ click vào a có #thanbai thì thanbai sẽ thành màu được set */
+  color: darkolivegreen;
+}
+
+p:first-child {
+  /* không quan tâm đến loại thẻ */
+  /* thẻ p là thẻ con đầu tiên */
+  color: red;
+}
+
+p:last-child {
+  /* thẻ p là thẻ con cuối cùng */
+  color: chartreuse;
+}
+/* thẻ con thứ n, tính từ trên xuống */
+/* p:nth-child(2) {
+  color: pink;
+} */
+
+/* thay đổi thẻ p đứng ở vị trí chẵn */
+/* số lẻ dùng odd */
+p:nth-child(even) {
+  color: darkseagreen;
+}
+
+/* bước nhảy bất kì 3n+1*/
+/* n=0=>1, n=1=> 4,... */
+p:nth-child(3n + 1) {
+  color: crimson;
+}
+
+p:nth-last-child(2) {
+  color: gold;
+}
+
+p:only-child {
+  color: sienna;
+}

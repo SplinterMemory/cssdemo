@@ -58,3 +58,85 @@ tìm từ khóa validator html
 *selector : chọn tất cả các element
 
 element.class: p.intro => chọn tất cả các thẻ p có class là intro
+
+_  bộ chọn kết hợp 2:
+element, element
+div, p: chọn tất cả các thẻ div và p (mỗi bộ chọn cách nhau bởi dấu phẩy)
+.class1.class2: tác động lên thẻ có đủ 2 class này (giống điều kiện and)
+
+_  bộ chọn kết hợp 3
+Space selector
+div p: chọn tất cả các thẻ p nằm trong thẻ div
+> selector: div > p: chọn tất cả các thẻ p là con trực tiếp của thẻ div (thụt 1 cấp)
+(thụt 2 cấp sẽ không phải con trực tiếp)
+(khác nhau giữa thẻ con và thẻ con trực tiếp (dấu space và dấu >))
+
+_  bộ chọn kết hợp 4
++ selectors
+element + element
+div + p: chọn phần tử p đầu tiên được đặt ngay sau phần tử div
+h1 + h2: tác động thẻ h2 đặt ngay sau nó
+.demo2 + h3: thẻ h3 nằm sát ngay sau class demo2
+
+_ bộ chọn kết hợp 5
+dấu ~
+div ~ a: tất cả thẻ a nằm sau thẻ div
+(không quan tâm có sát đít hay không)
+
+*) AttributeSelector
+[href]: chọn tất cả các thẻ có thuộc tính là href
+a[href]: chỉ tác động thẻ a có thuộc tính là href
+
+[Attribute=value]
+a[target="_blank"]: chỉ tác động vào thẻ a có target = blank
+
+[Attribute~=value]
+[title~="pic"]: chọn tất cả các thuộc tính title có chứa từ pic trong giá trị (pic phải đứng riêng lẻ)
+a[title~="pic"][title~="so"]: chỉ tác động đến thẻ a có title chứa từ pic và so
+
+[attribute*=value]
+[title*="pic"]: chọn tất cả các thuộc tính: title có chứa chuỗi pic trong giá trị
+a[title*="pic"]: chỉ tác động thẻ a: chỉ cần có chuỗi pic trong giá trị
+
+[attribute|=value]
+[title |= "pic"]: chọn tất cả thuộc tính có từ duy nhất bắt đầu bằng từ pic
+a[title|="pic"]: chỉ tác động thẻ a: Title bắt đầu bằng từ pic, nếu có nhiều thì phải nối nhau = dấu -
+
+[attribute^=value]
+[title|^"pic"]: chọn tất cả các thuộc tính: title bắt đầu bằng từ pic
+a[title^="pic"]: chỉ tác động đến thẻ a: Title bắt đầu bằng từ pic, có thể có nhiều từ  đằng sau
+
+[attribute$=value]:
+[title$="1"]: chọn tất cả các thuộc tính title kết thúc bằng kí tự 1 
+a[title$="1"]: chỉ tác động thẻ a: Title kết thúc bằng kí tự "1"
+
+*) pse udo classes
+_ :hover
+p:hover: chọn thẻ p khi di chuột qua
+_ :active
+a:active: Chọn thẻ a khi nhấn giữ chuột
+_ :link, :visited
+a:link : chọn thẻ a có liên kết chưa click vào
+a:visited: chọn thẻ a có liên kết đã click truy cập
+_ :empty
+div:empty: chọn các thẻ div không có nội dung
+tác động lên các thẻ div không có nội dung
+_ :target
+#home:target: Chọn thẻ có id = "home" khi trên url có hash tương ứng
+khi  click vào thẻ a có id là nó
+ví dụ click vào a có #thanbai thì thanbai sẽ thành màu được set
+_ Child selectors
+p:first-child: thẻ p là thẻ con đầu tiên
+p:last-child: thẻ p là thẻ con cuối cùng
+p:nth-child(2): thẻ p là thẻ con thứ 2 từ trên xuống
+p:nth-last-child(2): thẻ p là thẻ con thứ 2 từ  dưới lên
+p:only-child: thẻ p là thẻ con duy nhất (nếu có 1 thẻ khác ví dụ h1 thì vẫn ko phải là thẻ con duy nhất)
+
+_ Type selectors
+p:first-of-type: thẻ p xuất hiện đầu tiên trong thẻ cha
+p:last-of-type: thẻ p xuất hiện cuối cùng trong thẻ cha
+p:nth-of-type(2): thẻ p xuất hiện thứ n trong thẻ cha
+p:nth-last-of-type(2): thẻ p xuất hiện thứ n trong thẻ cha, tính từ cuối lên
+p:only-of-type: thẻ p xuất hiện duy nhất trong thẻ cha
+
+
