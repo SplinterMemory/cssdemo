@@ -125,18 +125,31 @@ _ :target
 #home:target: Chọn thẻ có id = "home" khi trên url có hash tương ứng
 khi  click vào thẻ a có id là nó
 ví dụ click vào a có #thanbai thì thanbai sẽ thành màu được set
-_ Child selectors
+_ Child selectors (không quan tâm đến kiểu)
 p:first-child: thẻ p là thẻ con đầu tiên
 p:last-child: thẻ p là thẻ con cuối cùng
 p:nth-child(2): thẻ p là thẻ con thứ 2 từ trên xuống
 p:nth-last-child(2): thẻ p là thẻ con thứ 2 từ  dưới lên
 p:only-child: thẻ p là thẻ con duy nhất (nếu có 1 thẻ khác ví dụ h1 thì vẫn ko phải là thẻ con duy nhất)
 
-_ Type selectors
+_ Type selectors (quan tâm đến kiểu)
 p:first-of-type: thẻ p xuất hiện đầu tiên trong thẻ cha
 p:last-of-type: thẻ p xuất hiện cuối cùng trong thẻ cha
 p:nth-of-type(2): thẻ p xuất hiện thứ n trong thẻ cha
 p:nth-last-of-type(2): thẻ p xuất hiện thứ n trong thẻ cha, tính từ cuối lên
 p:only-of-type: thẻ p xuất hiện duy nhất trong thẻ cha
+
+_ Not selectors và quy tắc thứ tự ưu tiên
+:not(selector)
+.top:not(p): Chọn các thẻ có class top ngoại trừ thẻ p
+.top:not(:first-of-type)
+1. !important
+2. inline style
+3. id selector
+4. class hoặc pseudo class (:) selector
+5. element selector (h, p, li, div)
+6. Bộ chọn chung (*)
+
+Thứ tự ưu tiên
 
 

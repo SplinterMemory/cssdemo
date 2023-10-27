@@ -1,0 +1,9 @@
+.top:not(p) {
+  /* tác động lên tất cả các class là top loại trừ thẻ p */
+  background-color: yellow;
+}
+
+.top:not(:first-of-type) {
+  /* thẻ đầu tiên so với khối bên ngoài nó */
+  background-color: blue;
+}

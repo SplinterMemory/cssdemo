@@ -12,5 +12,10 @@ h2:last-of-type {
 }
 
 p:nth-of-type(3) {
+  /* có thẻ thay 3 = odd, even , điều kiện */
   color: blueviolet;
+}
+
+p:only-of-type {
+  color: chocolate;
 }

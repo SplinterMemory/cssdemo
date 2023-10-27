@@ -1,0 +1,19 @@
+* {
+  /* universal selector */
+  /* yếu nhất: ưu tiên thứ 6 */
+  color: red;
+}
+
+h1 {
+  /* element selector */
+  /* ưu tiên thứ 5 */
+  color: blue;
+}
+
+/* class - psedo class */
+/* ưu tiên thứ 4 */
+.demo {
+  color: green;
+}
+
+/* id */
