@@ -1,0 +1,27 @@
+/* Mặc định có 2 trạng thái display mặc định: block,inline */
+/* block: các thẻ ở trạng thái mặc định luôn chiếm 100% chiều rộng của thẻ cha bất kể
+ nội dung dài hay ngắn: ví dụ div, p, h1, h2, ul, ol  */
+
+/* inline : hộp có kích thước phụ thuộc vào nội dung bên trong nó
+ví dụ: a, strong, em, button */
+/* không phá vỡ cấu trúc dòng, các phần tử inline có thể đặt cạnh nhau */
+
+/* 1 số thuộc tính không áp dụng được với inline */
+/*  1. padding-top, padding-bottom */
+/*  2.  margin-top, margin-bottom */
+/*  3. width, height, min-width, min-height */
+/* sở dĩ không áp dụng được vì sinh ra để nằm trên cùng 1 hàng, tránh phá vỡ cấu trúc dòng */
+body {
+  /* width: 650px; */
+}
+
+/* inline-block: là sự kết hợp giữa inline và block */
+
+strong {
+  height: 100px;
+  width: 100px;
+  /* padding: 30px; */
+  background-color: blue;
+  display: inline-block;
+  padding: 30px;
+}

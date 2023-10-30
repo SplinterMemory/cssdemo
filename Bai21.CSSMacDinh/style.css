@@ -1,0 +1,6 @@
+/* tìm kiếm default css value */
+/* Ngôn ngữ đọc từ trái qua phải : start = left, end = right
+còn gặp ngôn ngữ ả rập thì sẽ tính start = right, end = left
+vd: margin-block-start */
+
+/* thẻ meta đang mặc định là none */

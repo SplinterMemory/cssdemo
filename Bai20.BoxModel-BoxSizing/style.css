@@ -1,0 +1,19 @@
+/* sử dụng border-box thường xuyên hơn để kích thước khớp với thiết kế, tránh phải tính toán lại phần nội dung
+(kích thước phần tử ổn định) */
+/* mặc định đang ở trạng thái content-box */
+/* mặc định width height sẽ là kích thước của vùng content */
+.box {
+  width: 100px;
+  height: 150px;
+  padding: 5px;
+  border: 10px solid red;
+  box-sizing: content-box;
+}
+
+/* box-sizing:border-box => kích thước sẽ là toàn bộ phần tử bao gồm phần border */
+.box2 {
+  width: 160px;
+  height: 210px;
+  padding: 5px;
+  box-sizing: border-box;
+}

@@ -1,0 +1,59 @@
+/* margin collapse: là hiện tượng chồng lặp
+ thuộc tính margin khi 2 phần tử liền kề cùng thiết lập margin với phần tử còn lại theo chiều dọc */
+/* theo chiều ngang không bị hiện tượng này */
+/* thẻ div: mặc định display:block sẽ chiếm hết theo chiều ngang */
+.box {
+  width: 200px;
+  height: 200px;
+  border: 10px solid red;
+  /* xử lý margin collapse */
+  display: flex;
+  flex-direction: column;
+}
+
+.box1 {
+  margin-bottom: 50px;
+}
+
+/* trong trường hợp này sẽ lấy phần từ có giá trị lớn hơn */
+.box2 {
+  margin-top: 70px;
+}
+
+/* để tránh trường hợp margin collapse ta chỉ dàn trang theo 1 chiều nhất quán */
+/* .box1 {
+  margin-bottom: 120px;
+} */
+
+/* ----------------------------- */
+/* margin collapse không bị theo chiều ngang */
+/* thẻ span: mặc định display:inline */
+.item {
+  background-color: yellow;
+  border: 2px solid red;
+}
+
+.item1 {
+  margin-right: 10px;
+}
+
+.item2 {
+  margin-left: 20px;
+}
+
+/* --------------------------- */
+/* margin-collapse khi sử dụng quan hệ cha con  */
+.box_parent {
+  background-color: pink;
+  height: 250px;
+  margin-top: 50px;
+  /* để khắc phục tình trạng margin-collapse thêm 2 thuộc tính */
+  display: flex;
+  flex-direction: column;
+}
+
+.box_child {
+  background-color: blue;
+  width: 50%;
+  margin-top: 70px;
+}

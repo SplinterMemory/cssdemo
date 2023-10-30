@@ -151,5 +151,91 @@ _ Not selectors và quy tắc thứ tự ưu tiên
 6. Bộ chọn chung (*)
 
 Thứ tự ưu tiên
+search từ khóa css specificity => w3school
 
+*) css box
+box model: Trình duyệt luôn coi mỗi phần tử là 1 box - hộp chữ nhật
+Nội dung (width, height) => hình ảnh, text, video
+padding => khoảng đệm nội dung và viền (không chứa nội dung)
+border => viền của phần tử (viên nét liền, đứt,..)
+margin => khoảng cách với các phần từ liền kề
 
+chiều cao, chiều rộng của 1 phần từ = content + padding + border (không bao gồm margin)
+chrome extension: pesticide for chrome
+_ Padding
+(dấu - trong computed của inspect chrome là chưa đc định nghĩa)
+trên dưới, trái phải: 2 đối số
+trên trái,phải dưới : 3 đối số
+trên phải dưới trái: 4 đối số (đi theo chiều kim đồng hồ)
+(nếu có nhiều thuộc tính giống nhau thì thuộc tính đứng sau sẽ đè lên)
+
+_ Border: viền
+border:  <line-width> || <line-style> || <color>
+border-radius
+
+_ Margin: khoảng cách của nó với phần tử ở bên cạnh nó
+trong TH có phần tử liền kề
+	
+_ sử dụng margin âm để xếp chồng avatar
+vào uifaces.co để lấy avatar
+
+_ margin collapse: là hiện tượng chồng lặp thuộc tính margin khi 2 phần tử liền kề cùng thiết lập margin với phần tử còn lại theo chiều dọc
+ còn theo chiều ngang không bị hiện tượng này
+ mặc định display: block sẽ chiếm hết theo chiều ngang
+để tránh trường hợp margin collapse ta chỉ dàn trang theo 1 chiều nhất quán
+TH2: xảy ra khi sử dụng quan hệ cha con
+
+_outline: là đường viền bao quanh mép ngoài cùng của đối tượng
++ Không làm tăng thêm kích thước phần tử
++ Đơn giản nó chỉ là 1 vùng bao ngoài, chiếm cả vào phần margin
+(từ border hất ra (không có border tính từ padding, không có padding thì tính từ content), có thể đè lên margin)
+giống như lớp áo bên ngoài cùng
++ không vẽ được theo nhiều chiều
++ có thuộc tính outline-offset:cách viền border ra 1 khoảng và không quan tâm đến margin
+
+_ box-sizing: content-box và border-box
+sử dụng border-box thường xuyên hơn để kích thước khớp với thiết kế, tránh phải tính toán lại phần nội dung
+(kích thước phần tử ổn định)
+
+*) Default CSS Value
+tìm kiếm default css value
+Ngôn ngữ đọc từ trái qua phải : start = left, end = right
+còn gặp ngôn ngữ ả rập thì sẽ tính start = right, end = left
+vd: margin-block-start
+
+*) Inheritance-Kế thừa: các phần tử con nhận được giá trị thuộc tính thừa kề từ phần tử cha
+ các thuộc tính kế thừa chủ yếu liên quan đến văn bản 
+ font-family, font-size, font-weight, font-style, color, text-align, line-height, letter-spacing,... 
+tìm kiếm thuộc tính có được kế thừa hay không: css (color) property , w3s
+
+*) Reset CSS
+tìm kiếm browser default style
+Các Trình duyệt khác nhau sẽ tự động thêm thuộc tính khác nhau => khó kiểm soát
+search reset css
+lưu ý: reset.css luôn đặt trên cùng
+
+*) CSS Layout-Display
+display: block, inline, inline-block.
+Mặc định có 2 trạng thái display mặc định: block,inline
++ block: các thẻ ở trạng thái mặc định luôn chiếm 100% chiều rộng của thẻ cha bất kể
+ nội dung dài hay ngắn: ví dụ div, p, h1, h2, ul, ol
+ search html block inline element
+ 
++inline : hộp có kích thước phụ thuộc vào nội dung bên trong nó
+ví dụ: a, strong, em, button
+không phá vỡ cấu trúc dòng, các phần tử inline có thể đặt cạnh nhau
+1 số thuộc tính không áp dụng được với inline 
+ 1. padding-top, padding-bottom
+ 2. margin-top, margin-bottom
+ 3. width, height, min-width, min-height
+ sở dĩ không áp dụng được vì sinh ra để nằm trên cùng 1 hàng, tránh phá vỡ cấu trúc dòng
+ 
+ + inline-block: là sự kết hợp giữa inline và block
+ 
+ *) Đơn vị css
+ search từ khóa css unit
+ _ px: Đơn vị tuyệt đối
+Đơn vị để đo kích thước 1 hình ảnh kĩ thuật số
+  _ %: Đơn vị tương đối
+ 12%: kích thước = 12% phần tử cha của nó
+ nếu thẻ cha không có thì sẽ lấy kích thước mặc định của trình duyệt

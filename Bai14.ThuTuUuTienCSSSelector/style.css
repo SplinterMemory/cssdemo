@@ -1,7 +1,7 @@
 * {
   /* universal selector */
   /* yếu nhất: ưu tiên thứ 6 */
-  color: red;
+  color: red !important;
 }
 
 h1 {
@@ -17,3 +17,10 @@ h1 {
 }
 
 /* id */
+#theh1 {
+  color: yellow;
+  /* ưu tiên thứ 3 */
+}
+
+/* inline style: ưu tiên thứ 2 */
+/* !important: ưu tiên đầu tiên */

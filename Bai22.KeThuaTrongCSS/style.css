@@ -1,0 +1,12 @@
+body {
+  font-style: italic;
+  color: blue;
+  font-size: 30px;
+  border-top: 10px solid green;
+}
+/* Inheritance-Kế thừa: các phần tử con nhận được giá trị thuộc tính thừa kề từ phần tử cha */
+
+/* chuyển sang tab computed để kiểm tra */
+/* các thuộc tính kế thừa chủ yếu liên quan đến văn bản */
+/* font-family, font-size, font-weight, font-style, color, text-align, line-height, letter-spacing,... */
+/* tìm kiếm thuộc tính có được kế thừa hay không: css (color) property, w3s */
