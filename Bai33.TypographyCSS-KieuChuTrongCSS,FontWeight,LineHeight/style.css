@@ -1,0 +1,33 @@
+/* System Fonts with system-ui */
+/* body {
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+} */
+body {
+  /* nhóm tiêu đề: font có chân, backup của nó (san-serif) cũng thuộc kiểu có chân */
+  font-family: "Inter", sans-serif;
+}
+
+h1 {
+  /* nhóm tiêu đề: font không chân, backup của nó (serif) cũng thuộc kiểu không chân */
+  font-family: "Roboto Serif", serif;
+}
+
+/* -------------------------- */
+/* font-weight: độ dày của chũ (thường từ 100 đến 900)
+ line-height: chiều cao dòng */
+p {
+  /* font-weight mặc định */
+  font-weight: lighter;
+  /* khoảng cách dòng = 1.5 lần fontSize hiện tại của thẻ p, thẻ p có kế thừa = 16 * 1.5 = 24px */
+  line-height: 1.5;
+  /* cách viết này giống cách viết trên */
+  line-height: 150%;
+}
+
+h1 {
+  /* sử dụng mẹo này để căn giữa */
+  height: 120px;
+  background-color: blue;
+  line-height: 120px;
+}

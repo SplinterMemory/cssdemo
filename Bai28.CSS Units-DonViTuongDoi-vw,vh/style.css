@@ -1,0 +1,15 @@
+/* 50vw: 50% chiều rộng khung hình(viewport - phần hiển thị trên browser)
+20vh: 20% chiều cao khung hình(viewport - phần hiển thị trên browser) */
+.parent {
+  /* 80% viewport width */
+  width: 80vw;
+  /* 80% viewport height */
+  height: 80vh;
+  background-color: yellow;
+}
+
+.child {
+  width: 50vw;
+  height: 50vh;
+  background-color: violet;
+}

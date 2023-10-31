@@ -1,0 +1,36 @@
+h1 {
+  /* C1: rgb: là sự kết hợp của 3 kênh màu rgb: red, green, blue */
+  /* giá trị mỗi kênh màu từ 0 đến 255 */
+  /* color: rgb(255, 0, 0); */
+  /* có thể viết cách các thuộc tính */
+  /* color: rgb(134 32 150); */
+  /* C2: rgba: thuộc tính thứ 4 càng giảm đi thì càng trong suốt, mạnh nhất là 1 */
+  /* color: rgba(255, 0, 0, 1); */
+  /* có thể viết cách nhưng phần tử cuối phải cách = dấu / */
+  /* color: rgba(255 0 0/0.5); */
+  /* C3: hệ màu hex; hệ thập lục phân: #rrggbb */
+  /* giá trị mỗi kệnh chạy từ 00 đến ff */
+  /* color: #ff0000; */
+  /* color: #ff00ff; */
+  /* rút gọn của trường hợp trên */
+  color: #f0f;
+  /* thêm màu alpha của hệ thập lục phân: cũng chạy từ 00 đến ff */
+  /* color:  #ff00ff50; */
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  color: pink;
+  background-color: currentColor;
+  outline: 5px solid currentColor;
+  outline-offset: 5px;
+}
+
+/* color: có kế thừa */
+
+.box_child {
+  width: 50px;
+  height: 50px;
+  background-color: currentColor;
+}

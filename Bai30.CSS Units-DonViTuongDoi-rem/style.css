@@ -1,0 +1,38 @@
+/* rem: kích thước phụ thuộc vào font-size của html (root element)
+3rem: kích thước gấp 3 lần font chữ root element (không kế thừa)  */
+
+.parent {
+  font-size: 10px;
+}
+
+.child {
+  /* fontSize: 16 * 2 = 32px */
+  font-size: 2rem;
+  /* width: 32 * 2 = 64px, height: 32 * 2 = 64px */
+  width: 2rem;
+  height: 2rem;
+  background-color: violet;
+  border: 0.2rem solid red;
+}
+
+/* ----------------- */
+/* can thiệp vào thẻ gốc html */
+html {
+  /* vì mặc định 100% = 16px thì 1 rem = 16px */
+  /* sinh ra khái niệm (10*100/16)% = 62.5%  để 1 rem = 10px */
+  font-size: 62.5%;
+}
+
+h1 {
+  font-size: 4.4rem;
+}
+
+p {
+  font-size: 2.53rem;
+}
+
+.box {
+  width: 22rem;
+  height: 18rem;
+  background-color: blue;
+}

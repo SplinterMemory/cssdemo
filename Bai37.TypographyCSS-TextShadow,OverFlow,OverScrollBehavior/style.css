@@ -1,0 +1,58 @@
+h1 {
+  margin: 40px;
+  /* text-shadow: ngang, dọc, blur, màu */
+  /* Đối số 1: trực nằm ngang, từ trái qua phải */
+  /* Đối số 2: trục thẳng đứng, từ trên xuống dưới */
+  /* Đối số 3: độ nhòe: cao nhất là 0 */
+  /* Đối số 4: màu sắc */
+  text-shadow: 0px 20px 1px rgba(255, 0, 0, 0.199);
+}
+
+.box {
+  width: 300px;
+  height: 200px;
+  background-color: aqua;
+  /* mặc định: hiển thị nội dung kể cả vượt box chứa */
+  overflow: visible;
+  /* ẩn nội dung: khi nội dung vượt box chứa */
+  overflow: hidden;
+  /* tạo thanh cuộn: luôn hiển thị vùng thanh cuộn */
+  overflow: scroll;
+  /* nếu nội dung ngắn => không có scrollbar */
+  /* nếu nội dung vượt box chứa => tự động sinh ra scrollbar */
+  overflow: auto;
+
+  /* Mặc định overscroll-behavior: auto khi lăn chuột vào phần tử trong, khi chạm điểm tới hạn
+ tiếp tục lăn chuột  sẽ lăn chuột vào phần tử ngoài.Để tránh trường hợp này ta dùng thuộc tính 
+overscroll-behavior: contain, thuộc tính overscroll-behavior: none nếu trên pc sẽ giống như contain 
+nhưng trên mobile sẽ khác */
+  overscroll-behavior: contain;
+}
+
+/* customize scroll bar */
+/* chỉ áp dụng cho class box sẽ để .box đứng trước dấu :: còn không mặc định dấu :: sẽ apply cho tất cả */
+/* width */
+.box::-webkit-scrollbar {
+  /* độ rộng thanh kéo */
+  width: 10px;
+}
+
+/* Track */
+.box::-webkit-scrollbar-track {
+  /* độ rộng hộp màu xám trên thanh kéo */
+  background: rgba(255, 0, 0, 0.844);
+  border-radius: 5px;
+}
+
+/* Handle */
+.box::-webkit-scrollbar-thumb {
+  /* thanh kéo */
+  background: yellow;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+.box::-webkit-scrollbar-thumb:hover {
+  /* đổi màu thanh kéo */
+  background: #2fc271;
+}

@@ -1,0 +1,15 @@
+/* white-space: quy định về khoảng trắng khi code
+   normal(mặc định), nowrap (không xuống dòng kể cả chạm tới lề),
+    pre: giữ nguyện định dạng code như thẻ pre, chỉ xuống dòng khi hết câu (gặp dấu .) */
+/* pre-line: giữ nguyên dấu xuống dòng, nhưng trong mỗi dòng toàn bộ dấu cách sẽ bị xử lý */
+/* pre-wrap: bảo toàn dấu xuống dòng, dấu cách trong mỗi dòng nhưng khi gặp lề thì sẽ có 1 dấu cách và xuống dòng */
+/* pre-line và pre-wrap ít dùng */
+
+/* word-break */
+p {
+  background-color: yellow;
+  /* mặc định sẽ không bẻ ngang từ */
+  /* nhưng nếu người dùng nhập đoạn text dài viết liền nhau có thể gây phá vỡ giao diện */
+  /* bẻ ngang từ để giữ cho giao diện không bị vỡ */
+  word-break: break-all;
+}

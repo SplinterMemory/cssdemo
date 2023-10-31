@@ -1,0 +1,20 @@
+body {
+  background-color: aqua;
+}
+
+.box {
+  color: yellow;
+  width: 250px;
+  height: 250px;
+  /* trạng thái mặc định là transparent */
+  background-color: red;
+  background-color: rgba(0, 0, 255, 0.5);
+  background-color: #ccc;
+  /* sẽ lấy color mặc định của trình duyệt là màu đen */
+  /* nếu class box thêm thuộc tính color: vàng sẽ lấy theo thuộc tính này */
+  background-color: currentColor;
+  margin: 45px;
+  padding: 20px;
+  border: 20px dotted red;
+  /* nền sẽ chỉ đổ từ border hất vào trong, hay là chỉ đổ vào phần tính vào kích thước phần tử */
+}

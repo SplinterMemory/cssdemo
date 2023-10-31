@@ -1,0 +1,31 @@
+/* 12%: kích thước = 12% phần tử cha của nó
+nếu thẻ cha không có thì sẽ lấy kích thước mặc định của trình duyệt */
+/* lấy thuộc tính display:block và margin:8px của thẻ cha:body */
+/* thẻ body là 1 thẻ co giãn, chỉ cao bằng kích thước phần tử khai báo bên trong */
+body {
+  /* background-color: brown; */
+}
+
+.box {
+  background-color: blue;
+  /* so với cha của nó: body */
+  width: 60%;
+}
+.box_child {
+  background-color: yellow;
+  /* so với cha của nó : class box */
+  width: 50%;
+}
+
+/* -------------------- */
+.parent {
+  font-size: 60px;
+}
+/* thẻ con kế thừa thuộc tính của thẻ cha */
+
+.line1 {
+  /* fontSize = 40% của 60 (thẻ cha) = 24 */
+  /* nếu thẻ cha không có kích thước thì lấy 40% kích thước trình duyệt: thẻ html
+   (thẻ html fontSize mặc định là 16px) */
+  font-size: 40%;
+}

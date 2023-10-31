@@ -239,3 +239,84 @@ không phá vỡ cấu trúc dòng, các phần tử inline có thể đặt c�
   _ %: Đơn vị tương đối
  12%: kích thước = 12% phần tử cha của nó
  nếu thẻ cha không có thì sẽ lấy kích thước mặc định của trình duyệt
+ thẻ body là 1 thẻ co giãn, chỉ cao bằng kích thước phần tử khai báo bên trong
+ 
+ _ vw, vh: đơn vị tương đối
+ 50vw: 50% chiều rộng khung hình(viewport: phần hiển thị trên browser)
+  20vh: 20% chiều cao khung hình(viewport: phần hiển thị trên browser)
+ _ em
+  2em: kích thước gấp 2 lần còn lại (có kế thừa)
+  TH1: thẻ cha và thẻ con ko có font size=> lấy font-size của root(html)
+  TH2: thẻ cha có fontSize => thẻ con kế thừa
+  TH3: thẻ cha và con đều có fontSize => ưu tiên chính nó hơn (thằng con)
+  TH4: thẻ cha có fontSize tương đối
+  thẻ cha sẽ lấy kích thước mặc định từ trình duyệt (16px) 
+  =>  thẻ cha: fontSize 2 * 16 = 32px, thẻ con kế thừa
+_ rem: kích thước phụ thuộc vào font-size của html (root element)
+3rem: kích thước gấp 3 lần font chữ root element (không kế thừa) 
+chuyển đổi 1 rem = 10px
+can thiệp vào thẻ gốc html
+vì mặc định 100% = 16px thì 1 rem = 16px
+sinh ra khái niệm (10*100/16)% = 62.5%  để 1 rem = 10px
+
+*) làm việc với màu sắc trong CSS
+_ rgb: red green blue  từ 00 đến ff
+_ rgba a từ 0.1 đến 1
+_ hệ thập lục phân #rrggbb
+_ tên màu
+
+*) CSSFont
+_ Font không có gai ở đầu chữ cái: sans serif
+_ Font có gai ở đầu: serif
+_ Font có cùng độ rộng: Monospace
+gỡ từ tìm kiếm: system fonts stack
+Nhúng font: đồng nhất khi các hđh khác nhau
+
+*) Typography trong CSS
+Kiểu chữ trong CSS
+search css reference
+_ font-weight: độ dày của chũ (thường từ 100 đến 900)
+_ line-height: chiều cao dòng
+_ letter spacing: tăng giảm khoảng cách giữa các kí tự
+_ word spacing: tăng giảm khoảng cách giữa các từ
+_ text-align: justify (căn dàn đều 2 bên), left, right, center
+text-align chỉ căn text so với box chứa nó
+_ text-docoration: none, underline, line-through, overline, underline dotted blue 5px
+_ text-indent: thụt lề
+_ text-transform: capitalize (viết hoa chữ cái đầu), lowercase, uppercase
+_ white-space: quy định về khoảng trắng khi code
+   normal(mặc định), nowrap (không xuống dòng kể cả chạm tới lề), pre: giữ nguyện định dạng code
+   _ word break: bẻ ngang từ để giữ giao diện không bị vỡ
+   sử dụng break-all
+_ text-shadow: Bóng đổ text
+vào trang https://cssgenerator.org/text-shadow-css-generator.html
+   text-shadow: ngang, dọc, blur, màu 
+   Đối số 1: trực nằm ngang, từ trái qua phải
+   Đối số 2: trục thẳng đứng, từ trên xuống dưới
+   Đối số 3: độ nhòe: cao nhất là 0
+   Đối số 4: màu sắc 
+_ over-flow: visible
+   visible(mặc định): hiển thị nội dung kể cả vượt box chứa 
+  hidden: ẩn nội dung: khi nội dung vượt box chứa 
+   scroll: tạo thanh cuộn: luôn hiển thị vùng thanh cuộn 
+   auto: nếu nội dung ngắn => không có scrollbar 
+   nếu nội dung vượt box chứa => tự động sinh ra scrollbar 
+
+_ overscroll-behavior: auto;
+Mặc định khi lăn chuột vào phần tử trong, lăn xuống hết nội dung, 
+rồi nhấn lăn chuột tiếp sẽ lăn chuột vào phần tử ngoài
+Để tránh trường hợp này ta dùng thuộc tính 
+overscroll-behavior: contain
+thuộc tính overscroll-behavior: none nếu trên pc sẽ giống như contain nhưng trên mobile sẽ khác
+
+_ text-overflow: để dấu ...
+tạo dấu .. ở dòng thứ 2, tương tự dòng 3, 4
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+*) tạo biểu tượng đẹp với font awesome  
+tìm kiếm awesome font cdn
+
+*) background
+
+

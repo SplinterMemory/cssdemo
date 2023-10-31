@@ -1,0 +1,26 @@
+/*  letter spacing: tăng giảm khoảng cách giữa các kí tự
+ word spacing: tăng giảm khoảng cách giữa các từ */
+
+body {
+  /* tác động thuộc tính so với box chứa nó */
+  /* text-align: center; */
+  /* => thẻ a đã được căn vào giữa */
+}
+
+p {
+  /* letter-spacing: 20px; */
+  /* word-spacing: 20px; */
+  /* mặc định */
+  /* text-align: left; */
+  /* text-align: justify; */
+  /* text-align: right; */
+  /* text-align: center; */
+  /* text-align chỉ căn text so với box chứa nó */
+}
+
+.home {
+  /* nếu muốn căn giữa thẻ a không muốn phải thêm thuộc tính text-align: center vào body */
+  /* ta đổi display thành block */
+  text-align: center;
+  display: block;
+}

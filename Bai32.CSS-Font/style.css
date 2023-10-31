@@ -1,0 +1,14 @@
+/* System Fonts with system-ui */
+/* body {
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+} */
+body {
+  /* nhóm tiêu đề: font có chân, backup của nó (san-serif) cũng thuộc kiểu có chân */
+  font-family: "Inter", sans-serif;
+}
+
+h1 {
+  /* nhóm tiêu đề: font không chân, backup của nó (serif) cũng thuộc kiểu không chân */
+  font-family: "Roboto Serif", serif;
+}

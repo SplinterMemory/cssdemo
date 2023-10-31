@@ -1,0 +1,40 @@
+/* 2em: kích thước gấp 2 lần font chữ còn lại (là thuộc tính kế thừa) */
+/* Đơn vị em phụ thuộc vào fontSize hiện tại của chính nó */
+/* thẻ cha và thẻ con ko có font size => lấy font-size của root(html) => lấy fontSize mặc định của trình duyệt  */
+
+.child {
+  /* TH1: Trường hợp class child có fontSize từ sẽ ưu tiên lấy từ fontSize ở đó hơn */
+  /* font-size: 10px; */
+  /* trường hợp có fontSize => width: 10(fontSize) * 10 = 100px */
+  width: 10em;
+  /* trường hợp có fontSize => height: 10(fontSize) * 10 = 100px */
+  height: 10em;
+  background-color: violet;
+}
+
+.parent {
+  /* TH2: nếu class child không có fontSize thì sẽ kế thừa từ class cha: inheritance from div.parent
+   => fontSize = 20px  */
+  /* khi đó width child = 20 * 10 = 200px, height = 20 * 10 = 200px */
+  /* font-size: 20px; */
+  /* TH3: nếu class child và class parent đều có font Size sẽ ưu tiên lấy font Size ở chính nó (class Child) */
+  /* TH4: thẻ cha có fontSize tương đối */
+  /* thẻ cha sẽ lấy kích thước mặc định từ trình duyệt (16px) =>  thẻ cha: fontSize 2 * 16 = 32px => thẻ con kế thừa */
+  font-size: 2em;
+}
+
+/* ----------------------- */
+
+.parent1 {
+  font-size: 10px;
+}
+
+.child1 {
+  /* thằng child 1 đầu tiên: 10px -> fontSize: 2 * 10(lấy từ cha) = 20px */
+  /* thằng child 1 thứ 2: 20px -> fontSize: 20 * 2 = 40px */
+  /* thằng child 1 thứ 3: 20px -> fontSize: 40 * 2 = 80px */
+  font-size: 2em;
+  width: 2em;
+  height: 2em;
+  background-color: blue;
+}
