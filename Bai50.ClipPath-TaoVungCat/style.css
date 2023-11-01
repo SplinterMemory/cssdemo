@@ -1,0 +1,26 @@
+/* clip path: tạo 1 vùng cắt, nội dung trong vùng cắt sẽ hiển thị, nội dung ngoài vùng cắt sẽ bị ẩn đi */
+.box {
+  width: 200px;
+  height: 200px;
+  /* background: bg-color bg-image position/bg-size bg-repeat bg-origin bg-clip bg-attachment initial|inherit; */
+  background: url(./bg/ava.png) center/cover;
+  /* đường tròn sẽ có bán kính là 80px */
+  clip-path: circle(80px);
+  /* bán kính: = 50% của max(width (200), height(200)) = 50% của 200 = 100px  */
+  clip-path: circle(50%);
+  /* bằng với thằng ở trên */
+  clip-path: circle(100px);
+  /* ở trạng thái mặc định thì at x: 50%, y: 50% - x,y giống gốc tọa độ */
+  clip-path: circle(50% at 50% 50%);
+  /* dịch x: 40%, y: 70% */
+  clip-path: circle(50% at 40% 70%);
+
+  /* inset */
+  /* cắt đều 4 hướng: giống hệt padding, margin */
+  clip-path: inset(20px);
+  clip-path: inset(20px 50px);
+  clip-path: inset(20px 50px 80px);
+  clip-path: inset(20px 50px 80px 30px);
+  /* giống với quy tắc của padding nhưng quy về góc */
+  clip-path: inset(20px round 15px 50px 80px 15px);
+}

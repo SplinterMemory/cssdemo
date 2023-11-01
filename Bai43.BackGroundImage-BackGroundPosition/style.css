@@ -1,0 +1,35 @@
+.box {
+  width: 400px;
+  height: 200px;
+  background-image: url(https://cf.shopee.vn/file/faaceaa689c6585c2b07e2ab2acf4296);
+  border: 5px dashed blue;
+  /* tính điểm bắt đầu từ góc trên bên phải của box chứa nó và dàn ảnh xuống */
+  background-position: top right;
+  /* tính điểm bắt đầu từ góc trên bên trái của box chứa nó và dàn ảnh xuống */
+  background-position: top left;
+  /* tính điểm bắt đầu từ góc dưới bên trái của box chứa nó và dàn ảnh lên  */
+  background-position: bottom left;
+  /* tính điểm bắt đầu từ góc dưới bên phải của box chứa nó và dàn ảnh lên  */
+  background-position: bottom right;
+  /* điểm bắt đầu từ chính giữa phía trên của bức ảnh */
+  background-position: top;
+  /* điểm bắt đầu từ chính giữa bên dưới của bức ảnh*/
+  background-position: bottom;
+  /* điểm bắt đầu từ chính giữa bên trái của bức ảnh*/
+  background-position: left;
+  /* điểm bắt đầu từ chính giữa bên phải của bức ảnh*/
+  background-position: right;
+  /* điểm bắt đầu từ tâm của bức ảnh*/
+  background-position: center;
+  /* giống trục tọa độ x và y, chạy từ 0 đến 100% */
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-position: -10% 0%;
+  /* bức ảnh sẽ cách gốc tọa độ x là 100 px(chiều ngang), cách gốc tọa độ y 50px (chiều dài) */
+  background-position: 100px 50px;
+}
+
+img {
+  margin-top: 50px;
+  width: 60%;
+}

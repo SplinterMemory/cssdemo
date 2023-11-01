@@ -1,0 +1,33 @@
+/* linear gradient: giải màu chuyển sắc */
+/* background-image: linear gradient (direction, color1, color2): phải có từ 2 đối số màu trở lên */
+.box {
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+.box2 {
+  /* có ít nhất 2 thuộc tính color để chuyển từ màu nọ sang màu kia */
+  /* đối số đầu tiên không nhập vào sẽ mặc định là to bottom: từ top => bottom (từ trên xuống dưới) */
+  background-image: linear-gradient(red, blue);
+  background-image: linear-gradient(to bottom, red, blue);
+}
+
+.box3 {
+  width: 300px;
+  height: 300px;
+  /* từ trái sang phải */
+  background-image: linear-gradient(to left, red, blue);
+  /* hướng đến góc dưới bên phải */
+  background-image: linear-gradient(to bottom right, red, blue);
+}
+
+.box1 {
+  width: 300px;
+  height: 300px;
+  /* khoảng từ 0 đến 30%, trình duyệt sẽ giữ nguyên giá trị màu ban đầu: màu đỏ và ko chuyển màu */
+  /* bắt đầu từ 40%, màu xanh không chuyển màu */
+  background-image: linear-gradient(red 30%, blue 40%);
+  /* dòng này dùng để backup nếu trình duyệt không hỗ trợ gradient */
+  background-color: #0093e9;
+  background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
+}

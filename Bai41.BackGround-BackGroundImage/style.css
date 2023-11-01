@@ -1,0 +1,20 @@
+/* tìm kiếm texture background image, chọn công cụ chọn màu: trong suốt, kích thước: biểu tượng */
+.box {
+  /* thẻ div luôn chiếm hết chiều ngang của thẻ body */
+  /* ảnh sẽ lặp lại cho đến hết chiều cao, chiều ngang */
+  height: 100vh;
+  background-image: url(./bg/anhnen.jpg);
+  background-image: url(./bg/anhnen.jpg), url(./bg/small.jpg);
+  background-image: url(./bg/leaf.png), url(./bg/small.jpg);
+  /*không hiển thị hình ảnh  */
+  /* background-image: none; */
+  /* giá trị mặc định, sẽ lặp theo cả trục x và y */
+  /* lợi thế là nếu ghép nhiều tấm hình lại với nhau tạo ra 1 tấm hình => chiếm ít dung lượng, ít lần tải */
+  /* background-repeat: repeat; */
+  /* chỉ hiển thị 1 lần  */
+  /* background-repeat: no-repeat; */
+  /* lặp theo trục x*/
+  /* background-repeat: repeat-x; */
+  /* lặp theo trục y */
+  /* background-repeat: repeat-y; */
+}

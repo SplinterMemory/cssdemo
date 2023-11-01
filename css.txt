@@ -318,5 +318,44 @@ tạo dấu .. ở dòng thứ 2, tương tự dòng 3, 4
 tìm kiếm awesome font cdn
 
 *) background
+_ background-color: 
+   nền sẽ chỉ đổ từ border hất vào trong ( chỉ đổ vào phần tính vào kích thước phần tử) 
+
+_ background-image
++ background-repeat
+tìm kiếm textture background image, chọn công cụ chọn màu: trong suốt, kích thước: biểu tượng
+_ có thể sử dụng kết hợp: ảnh nào xếp trước nằm trước, xếp sau nằm sau
+
++ background_size: điều chỉnh kích thước ảnh nền
+   contain: ảnh vừa khung hình, giữ nguyên tỉ lệ ảnh, không bị mất ảnh, tuy nhiên phần thừa ra sẽ lặp lại 
+   cover: ảnh vừa khớp khung hình, giữ nguyên tỉ lệ ảnh (ko bị méo), có thể mất 1 phần hình ảnh, không lặp lại 
+   200px 200px: chiều rộng, chiều cao
+   100% 100%:    chiếm 100% chiều rộng box chứa nó, chiếm 100% chiều cao box chứa nó
+   
++ background-position
+top left, top right,....
+
++ linear-gradient: giải nền chuyển sắc
+search linear gradient
+
+_ background-attachment
+mặc định scroll: ảnh tự động cuộn theo trình duyệt khi kéo lên, xuống
+fixed: ảnh cố định khi kéo scroll lên xuống
+local: ảnh cố định cục bộ trong bố cục con
+
+_ background-clip: quy định vùng đổ nền
+border-box: default: ảnh sẽ đổ vào full kích thước phần tử: content + padding + border 
+padding-box: ảnh chỉ đổ từ padding vào 
+content-box: ảnh chỉ đổ phần content
+text: đổi màu nền phần text
+
+_ background-origin: xác định gốc của bức ảnh đặt ở vị trí nào
+_ shorthand: cú pháp viết tắt
+_ backdrop-filter: bộ lọc phông nền
+
+*) clip path
 
 
+
+
+   

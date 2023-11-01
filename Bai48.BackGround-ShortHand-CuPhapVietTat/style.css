@@ -1,0 +1,54 @@
+/* cú pháp viết tăt  */
+
+.box {
+  width: 200px;
+  height: 200px;
+  border: 50px dotted rgb(25, 224, 128);
+  padding: 50px;
+  /* background-color: cyan; */
+  /* background-image: url(./bg/1.PNG); */
+  /* background-position: vị trí bắt đầu đặt hình ảnh */
+  /* background-position: top right; */
+  /* background-position: top left; */
+  /* background-position: bottom left; */
+  /* background-position: bottom right; */
+  /* background-position: left; */
+  /* background-position: right; */
+  /* background-position: top; */
+  /* background-position: bottom; */
+  /* background-position: center; */
+  /* Đơn vị % */
+  /* background-position: 0 100%; */
+  /* Đơn vị tuyệt đối */
+  /* background-position: 0 100px; */
+  /* background-size: mặc định hiển thị ảnh theo kích thước thật, tỷ lệ 1:1 */
+  /* background-size: contain; */
+  /* background-size: cover; */
+  /* background-repeat: default repeat */
+  /* background-repeat: repeat; */
+  /* background-repeat: no-repeat; */
+  /* background-orgin: xác định gốc của ảnh đặt ở vị trí nào */
+  /* background-origin: padding-box; */
+  /* background-origin: border-box; */
+  /* background-origin: content-box; */
+  /* background-clip: quy định nền đổ từ vùng nào */
+  /* mặc định: ảnh đổ từ border hất vào trong */
+  /* background-clip: border-box; */
+  /* ảnh đổ từ padding hất vào trong */
+  /* background-clip: padding-box; */
+  /* ảnh đổ phần content */
+  /* background-clip: content-box; */
+  /* background: bg-color bg-image position/bg-size bg-repeat bg-origin bg-clip bg-attachment initial|inherit; */
+  background: red;
+  background: red url(./bg/1.PNG);
+  background: red url(./bg/1.PNG) left;
+  background: red url(./bg/1.PNG) left / contain;
+  background: red url(./bg/1.PNG) left / cover no-repeat;
+  background: red url(./bg/1.PNG) left / cover no-repeat padding-box;
+  background: red url(./bg/1.PNG) left / cover no-repeat padding-box border-box;
+  background: red url(./bg/1.PNG) left / cover no-repeat padding-box border-box
+    fixed;
+  /* lưu ý nếu truyền background origin mà ko truyền background clip sẽ lấy giá trị background origin cho background clip */
+  /* ko truyền hết đối số: lấy giá trị mặc định của trình duyệt hoặc là kế thừa */
+  /* thông thường chỉ sử dụng đến thuộc tính background-repeat */
+}

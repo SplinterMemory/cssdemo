@@ -1,0 +1,36 @@
+/* background-clip: quy định vùng đổ nền */
+/* border-box: default: ảnh sẽ đổ vào full kích thước phần tử: content + padding + border */
+/* padding-box: ảnh chỉ đổ từ padding vào */
+/* content-box: ảnh chỉ đổ phần content */
+/* ảnh đổ từ viền nhưng lại xuất hiện rìa bị lặp lại vì gốc mặc định ảnh: background-origin:padding => học sau */
+.box {
+  width: 200px;
+  height: 200px;
+  background-image: url(./bg/1.PNG);
+  border: 50px dotted red;
+  padding: 50px;
+  /* mặc định ảnh sẽ đổ từ border hất vào trong */
+  background-clip: border-box;
+  /* ảnh sẽ đổ từ padding vào */
+  background-clip: padding-box;
+  /* ảnh chỉ đổ phần content */
+  background-clip: content-box;
+}
+
+@supports (background-clip: text) or (-webkit-background-clip: text) {
+  /* support dùng để kiểm tra xem trình duyệt có hỗ trợ không, nếu có thì mới thực hiện đoạn bên trong */
+  .text_hl {
+    /* ngoài ra background clip còn dùng để đổi màu nền của text, không hiển thị phần trống ngoài text */
+    background-color: #d9afd9;
+    background-image: linear-gradient(0deg, #d9afd9 0%, #97d9e1 100%);
+    /* không hỗ trợ nhiều trình duyệt, vào caniuse phải dùng prefixed */
+    /* background-clip: text; */
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+}
+
+.text_hl {
+  /* trong trường hợp không hỗ trợ background-clip:text thì hiển thị màu */
+  color: #d9afd9;
+}

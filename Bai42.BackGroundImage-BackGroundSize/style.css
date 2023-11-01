@@ -1,0 +1,21 @@
+.box {
+  width: 500px;
+  height: 400px;
+  background-image: url(./bg/dog.jpg);
+  border: 4px dotted red;
+  /* ảnh vừa khung hình, giữ nguyên tỉ lệ ảnh, không bị mất ảnh, tuy nhiên phần thừa ra sẽ lặp lại */
+  background-size: contain;
+  /* ảnh vừa khớp khung hình, giữ nguyên tỉ lệ ảnh (ko bị méo), có thể mất 1 phần hình ảnh, không lặp lại  */
+  background-size: cover;
+  /* vào tab computed để xem ảnh gốc */
+  /* chiều rộng sẽ là 200px, và lặp lại ảnh */
+  background-size: 200px;
+  /* chiều rộng sẽ chiếm 100% chiều rộng của box chứa nó, chiều cao tự căn tỉ lệ => phần thừa sẽ bị cắt đi */
+  background-size: 100%;
+  /* trường hợp 2 đối số */
+  /* Đối số đằng trước là chiều rộng, đối số đằng sau là chiều cao */
+  background-size: 100% 100%;
+  /* Sử dụng đơn vị tuyệt đối, bị lặp lại */
+  background-size: 200px 200px;
+  /* thường thường rất ít khi sử dụng 2 đối số => bị méo, bị cắt đoạn */
+}
