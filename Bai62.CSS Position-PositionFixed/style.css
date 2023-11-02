@@ -1,0 +1,38 @@
+/* Fix cứng phần tử theo viewport (khung nhìn, vùng hiển thị nội dung trên màn hình của trình duyệt web) */
+.mes-bottom a {
+  font-size: 2rem;
+  color: #009eff;
+  /* biểu tượng sẽ được đưa ra khỏi luồng và căn theo khung nhìn */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.nav {
+  background: #555;
+  position: fixed;
+  /* dãn kịch trái, kịch phải */
+  left: 0;
+  right: 0;
+  top: 0;
+  /* không nên có thuộc tính chiều rộng vì sẽ không dãn hết được */
+  /* width: 500px; */
+  /* thuộc tính inset: giống padding */
+  /* inset: 50px 100px 150px 50px; */
+}
+
+.nav li {
+  display: inline-block;
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 20px;
+}
+
+h1 {
+  /* vì class nav position fix sẽ nằm ở layer phía trên che khuất thẻ h1 */
+  /* thêm thuộc tính margin-top */
+  margin-top: 51px;
+}

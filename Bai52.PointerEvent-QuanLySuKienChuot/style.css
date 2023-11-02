@@ -1,0 +1,19 @@
+/* pointer-event: sử dụng để kiểm soát hoạt động của chuột trên các phần tử html */
+.anh_demo {
+  min-width: 300px;
+  /* không lấy được link ảnh */
+  pointer-events: none;
+  /* dùng để ẩn, không cho click vào thẻ a */
+}
+
+.btn-home {
+  /* sử dụng display: inline-block để thêm phần padding */
+  display: inline-block;
+  padding: 10px 25px;
+  color: #fff;
+  background-color: rgb(6, 6, 58);
+  font-size: 25px;
+  text-decoration: none;
+  /* không hiện hình bàn tay và cũng ko click vào được nữa */
+  pointer-events: none;
+}

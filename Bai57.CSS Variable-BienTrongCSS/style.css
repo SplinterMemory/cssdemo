@@ -1,0 +1,58 @@
+/* Khi 1 giá trị css dùng đi dùng lại nhiều lần, ta có thể gán biến cho nó để tái sử dụng */
+/* để khai báo biến ta sẽ khai báo dấu --
+ nếu khai báo trong thẻ root (thẻ gốc) hoặc html: sẽ áp dụng cho toàn trang */
+/* :root {
+  --box-height: 120px;
+  --box-color: red;
+} */
+html {
+  --box-height: 120px;
+  --box-color: red;
+}
+.box1 {
+  height: var(--box-height);
+  /* background-color: #0f0; */
+  background-color: var(--box-color);
+  margin-bottom: 10px;
+}
+.box2 {
+  height: var(--box-height);
+  background-color: var(--box-color);
+  margin-bottom: 10px;
+}
+.box3 {
+  height: var(--box-height);
+  background-color: var(--box-color);
+  margin-bottom: 10px;
+}
+
+/* 3.và có thể bị ghi đè theo thứ tự ưu tiên */
+.box3 {
+  /* vì thuộc tính này viết sau nên sẽ ghi đè */
+  height: 200px;
+}
+
+/* 2.khi khai báo trong phần tử nào thì sẽ áp dụng cho phần tử nó và các cấp thấp hơn (con của nó) */
+/* khai báo cho biến cho class detail */
+.detail {
+  /* đặt tên biến là p_font_size */
+  --p_font_size: 30px;
+  /* font-size: var(--p_font_size); */
+}
+
+.detail span {
+  font-size: var(--p_font_size);
+}
+
+/* giá trị backup của biến */
+
+.content {
+  /* --background-box: red; */
+}
+
+.box4 {
+  height: 100px;
+  /* background-color: var(--background-box); */
+  /* sử dụng giá trị backup cho background-box nếu thuộc tính không tồn tại */
+  background-color: var(--background-box, blue);
+}

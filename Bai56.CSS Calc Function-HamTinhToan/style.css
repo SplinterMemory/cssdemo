@@ -1,0 +1,29 @@
+/* là 1 hàm trong CSS cho phép thực hiện các phép tính đơn giản */
+/* có thể sử dụng với tất cả các thuộc tính CSS về kích thước như width, height, margin, padding, top, left, background-position,... */
+
+.nav {
+  height: 100px;
+  background-color: #ccc;
+  /* width: 80% thẻ cha: thẻ body */
+  /* width: 80%; */
+  /* = 100% độ rộng của thẻ cha trừ đi 100px */
+  /* 100px: chiều rộng 2 bên => mỗi bên cách lề là 50px */
+  /* để kiểm chứng vào computed xem thuộc tính margin */
+  width: calc(100% - 100px);
+  /* chú ý: phải có khoảng trắng trước và sau toán tử +, - */
+  /* sau calc không được có dấu khoảng trắng (space) */
+  margin: 0 auto;
+}
+
+.main_content {
+  /* nếu sử dụng 100% - 100 thì sẽ = 0 thì thẻ body tự động co giãn, hiện tại chỉ nhận chiều cao là thẻ nav */
+  /* height: calc(100% - 100px); */
+  height: calc(100vh - 100px);
+  background-color: blue;
+  /* toán tử nhân và chia */
+  /* Toán tử nhân: viết đơn vị trước hay sau đều được, nhân có thể không cách, 1 trong 2 thằng phải không có đơn vị */
+  height: calc(100px * 2);
+  height: calc(2 * 100px);
+  /* Toán tử chia: phần có đơn vị bắt buộc phải viết trước và không được chia cho 0 */
+  height: calc(100vh / 2);
+}

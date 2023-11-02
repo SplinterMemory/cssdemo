@@ -354,6 +354,46 @@ _ shorthand: cú pháp viết tắt
 _ backdrop-filter: bộ lọc phông nền
 
 *) clip path
+quy ước: gốc ảnh nằm ở góc trái trên cùng
+circle: chỉ định bán kính đường tròn sẽ cắt
+inset: hình chữ nhật
+polygon: cắt hình đa giác
+
+*) box shadow
+search box_shadow
+*) pointer-event: kiểm soát hoạt động của chuột trên các phần tử html
+
+*)lazy load :  sử dụng để tối ưu trang web khi nội dung dài, việc load toàn bộ ảnh khi truy cập là không cần thiết */
+ => chỉ tải ảnh khi người dùng cuộn đến nội dung ảnh
+ thêm thuộc tính loading=lazy
+ 
+ *) pseudo elements: phần tử giả 
+ khác với psedo classes: lớp giả có dấu :
+ phần từ giả có dấu ::
+ ::first-line: dòng đầu tiên
+ ::first-letter: chữ cái đầu tiên
+ ::marker: tác động lên thẻ li (dấu .)
+ ::selection: tác động lên vùng bôi đen
+ ::before: thêm phần tử vào đằng trước
+ ::after: thêm phần tử vào đằng sau
+ 
+ *) CSS counters
+ counter-reset: section: khai báo biến: section
+ counter-increment: section: tăng biến đếm section
+ đặt vào trước thẻ : content: counter (section)
+ 
+ *) calc
+  là 1 hàm trong CSS cho phép thực hiện các phép tính đơn giản 
+ có thể sử dụng với tất cả các thuộc tính CSS về kích thước như width, height, margin, padding, top, left, background-position,... 
+ 
+ *) css variable: biến trong css
+  Khi 1 giá trị css dùng đi dùng lại nhiều lần, ta có thể gán biến cho nó để tái sử dụng
+  *) css position
+  position: relative
+  position: absolute
+  position: fixed
+  z-index
+
 
 
 

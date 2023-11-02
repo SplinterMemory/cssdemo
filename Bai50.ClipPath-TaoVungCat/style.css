@@ -1,26 +1,50 @@
 /* clip path: tạo 1 vùng cắt, nội dung trong vùng cắt sẽ hiển thị, nội dung ngoài vùng cắt sẽ bị ẩn đi */
+/* quy ước: gốc ảnh sẽ nằm ở góc trái trên cùng */
 .box {
   width: 200px;
   height: 200px;
+  /* để căn giữa dùng margin: 0 auto */
+  /* margin: 0 auto; */
   /* background: bg-color bg-image position/bg-size bg-repeat bg-origin bg-clip bg-attachment initial|inherit; */
   background: url(./bg/ava.png) center/cover;
-  /* đường tròn sẽ có bán kính là 80px */
+  /* chỉ định bán kính đường tròn sẽ cắt, đường tròn sẽ có bán kính là 80px */
   clip-path: circle(80px);
   /* bán kính: = 50% của max(width (200), height(200)) = 50% của 200 = 100px  */
+  /* ở trạng thái mặc định sẽ thì nằm ở x: 50%, y: 50% */
   clip-path: circle(50%);
   /* bằng với thằng ở trên */
   clip-path: circle(100px);
   /* ở trạng thái mặc định thì at x: 50%, y: 50% - x,y giống gốc tọa độ */
   clip-path: circle(50% at 50% 50%);
+  /* clip-path: circle(50% at 50% 50%) =  clip-path: circle(50%); */
+  /* x:0, y:0 */
+  clip-path: circle(50% at 0 0);
   /* dịch x: 40%, y: 70% */
   clip-path: circle(50% at 40% 70%);
-
-  /* inset */
+  /* inset: hình chữ nhật */
   /* cắt đều 4 hướng: giống hệt padding, margin */
   clip-path: inset(20px);
+  /* trên dưới, trái phải */
   clip-path: inset(20px 50px);
+  /* trên, trái phải, dưới */
   clip-path: inset(20px 50px 80px);
+  /* trên, phải, dưới, trái */
   clip-path: inset(20px 50px 80px 30px);
   /* giống với quy tắc của padding nhưng quy về góc */
+  /* bo mỗi góc là 15px */
+  clip-path: inset(20px round 15px);
+  /* 2 đối số: top left, bottom right (tạo thành đường chéo từ trái qua phải) */
+  clip-path: inset(20px round 15px 50px);
+  /* 3 đối số: top left, top right bottom left, bottom right */
+  clip-path: inset(20px round 15px 50px 80px);
+  /* 4 đối số: top left, top right, bottom right, bottom left: đi theo chiều kim đồng hồ */
   clip-path: inset(20px round 15px 50px 80px 15px);
+  /* polygon: hình đa giác */
+  /* cú pháp chung:cặp x, y là các cặp tọa độ các góc theo x và y */
+  /* clip-path: polygon (x y, x y, x y, x y) */
+  /* có thể tạo nhiều cặp điểm để nối các góc đa giác */
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%);
+  /* thêm border radius để bo góc */
+  border-radius: 15px;
 }

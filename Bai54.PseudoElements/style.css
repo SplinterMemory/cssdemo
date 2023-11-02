@@ -1,0 +1,57 @@
+/* khác với pseudo classes: lớp giả có dấu 2 chấm :
+ pseudo elements: phần tử giả có dấu 4 chấm ::  */
+
+/* chọn dòng đầu tiên của thẻ p để tác động lên */
+/* cho dù kéo trình duyệt ra hay vào */
+p::first-line {
+  color: red;
+}
+
+span {
+  display: block;
+}
+
+/* không tác động được đến thẻ span vì ở trạng thái mặc định là display:inline */
+/* muốn tác động đến thẻ span phải đổi thuộc tính thành display:inline-block hoặc display:block */
+span::first-line {
+  color: blue;
+  background-color: yellow;
+}
+
+/*tác động lên chữ cái đầu tiên của tất cả thẻ p  */
+p::first-letter {
+  font-size: 40px;
+  color: blue;
+}
+
+/* tác động lên  vùng bôi đen của thẻ p */
+p::selection {
+  background-color: brown;
+  color: #fff;
+}
+/* ::selection tương tự khi nhập *::selection: tác động lên vùng bôi đen của tất cả các thẻ */
+/* tác động lên các điểm đánh dấu của phần tử li (chấm tròn) */
+li::marker {
+  font-size: 40px;
+  color: red;
+}
+/* ::before: thêm phần tử vào đằng trước
+ ::after: thêm phần tử vào đằng sau */
+/* mặc định trạng thái hiển thị của before và after là inline */
+.box::before {
+  content: "Em ở đằng trước nè";
+  color: blue;
+}
+
+.box::after {
+  /* content: "Em ở đằng sau nè"; */
+  color: red;
+  /* có thể tạo khối, vẫn cần thẻ content nhưng không truyền gì */
+  content: "";
+  /* vì mặc định đang là inline nên không thể set chiều cao, chiều rộng => đổi sang inline block */
+  display: inline-block;
+  width: 100px;
+  height: 5px;
+  background-color: blue;
+  border-radius: 999px;
+}

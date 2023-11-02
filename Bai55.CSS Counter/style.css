@@ -1,0 +1,29 @@
+.box {
+  /* tạo 1 biến đếm là section */
+  counter-reset: anhnt-h2;
+  padding-left: 30px;
+  background-color: aqua;
+}
+
+h2 {
+  /* gặp thẻ h2 thì tăng biến đếm lên 1 */
+  counter-increment: anhnt-h2;
+  /* tạo biến đếm và reset biến đếm thẻ h3 về 0: sub-section */
+  counter-reset: anhnt-h3;
+}
+
+h2::before {
+  content: "Phần " counter(anhnt-h2) ": ";
+  color: red;
+}
+
+h3 {
+  /* gặp thẻ h3 thì tăng biến đếm lên 1 */
+  counter-increment: anhnt-h3;
+}
+
+h3::before {
+  content: counter(anhnt-h2) "." counter(anhnt-h3) ": ";
+  color: blue;
+  padding-left: 20px;
+}

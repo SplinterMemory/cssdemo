@@ -1,0 +1,26 @@
+/* tạo hiệu ứng đổ bóng */
+/* box shadow có 2 giá trị bắt buộc là offset x và offset y*/
+.box {
+  width: 150px;
+  height: 150px;
+  margin: 100px;
+  background-color: pink;
+  /* ko truyền màu thì mặc định là màu đen */
+  /* dịch trục x sang phải 60px , dịch trục y lên trên 16px */
+  /* box-shadow: 60px -16px blue; */
+  /* 4 đối số: 5px: độ nhòe */
+  /* box-shadow: 60px -16px 5px blue; */
+  /* 5 đối số: 10px: bán kính trải rộng */
+  /* box-shadow: 60px -16px 5px 10px blue; */
+  /* Những trường hợp trên bóng đang đổ ra phía ngoài đối tượng */
+  /* Trong trường hợp muốn chèn bóng nằm lên trên đối tượng luôn => cho thuộc tính inset ở đầu */
+  /* đổ theo trục x là 10px, trục y: 0 */
+  /* box-shadow: inset 10px 0; */
+  /* đổ theo trục x là 0px, trục y: 15px */
+  /* box-shadow: inset 0 15px; */
+  /* box-shadow: inset 10px 35px; */
+  /* box-shadow: inset 10px 35px 4px 15px yellow; */
+  /* cách đổ nhiều bóng, cách nhau bởi dấu phẩy */
+  box-shadow: 160px 0 green, 0 160px red, 160px 160px yellow;
+  border-radius: 15px;
+}

@@ -1,0 +1,47 @@
+/* Thuộc tính position: cho phép điều chỉnh vị trí các phần tử trên trang web */
+
+/* Position: static: Đây là giá trị mặc định của position */
+/* Các phần tử html mà chúng ta đã biết có vị trí cố định trên trang khi chưa can thiệp bằng css */
+.box {
+  width: 100px;
+  height: 100px;
+  color: #fff;
+  /* căn giữa text ở các khối */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box1 {
+  background-color: red;
+}
+
+.box2 {
+  background-color: blue;
+  /* position: relative: Định vị so với vị trí ban đầu của nó 1 khoảng x */
+  /* Tuy nhiên không có bất kì không gian mới nào được tạo ra để chứa phần tử được định vị theo kiểu này */
+  /* Vì vậy các phần tử khác trong trang web vẫn có thể bị che khuất bởi phần tử được định vị theo kiểu relative */
+  /* khi sử dụng thuộc tính này ta có thể sử dụng left, right, top, bottom để cách vị trí ban đầu 1 khoảng x */
+  /* các giá trị bottom, top, left, right chỉ tác dụng khi ta chuyển sang trạng thái relative */
+  position: relative;
+  /* box 2 cách lề trái ban đầu 50px */
+  /* left: 50px; */
+  /* box 2 cách lề phải ban đầu 50px */
+  /* right: 50px; */
+  /* box 2 cách lề trên ban đầu 50px */
+  /* top: 50px; */
+  /* box 2 cách lề dưới ban đầu 50px */
+  bottom: 50px;
+  /* có thể dùng kết hợp top bottom,... */
+  /* lưu ý khi sử dụng relative thì vị trí ban đầu của nó vẫn đang bị chiếm giữ */
+}
+
+.box3 {
+  background-color: green;
+  position: relative;
+  bottom: 50px;
+}
+
+h1 {
+  background-color: purple;
+}

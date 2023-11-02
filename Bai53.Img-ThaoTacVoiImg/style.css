@@ -1,0 +1,22 @@
+.demo {
+  /* chiều rộng tối đa 70% box chứa nó (class box) */
+  max-width: 70%;
+  /* tăng kích thước trình duyệt => lớn khi nào tỉ lệ 1/1 với bức ảnh gốc */
+  /* mẹo căn giữa, căn giữa so với box chứa nó là class box */
+  /* img mặc định sẽ là display:inline phải chuyển về display:block */
+  display: block;
+  margin: 0 auto;
+}
+
+.box {
+  max-width: 700px;
+  background-color: cyan;
+  /* khối box mặc định là display:block nên chỉ cần thêm margin: 0 auto */
+  /* khối box đã căn giữa thẻ body */
+  margin: 0 auto;
+}
+/* khi vào trang web, mặc định ảnh sẽ được tải luôn gây tốn băng thông, tốn thời gian load */
+/* Lazy load: sử dụng để tối ưu trang web khi nội dung dài, việc load toàn bộ ảnh khi truy cập là không cần thiết */
+/* => chỉ tải ảnh khi người dùng cuộn đến nội dung ảnh */
+
+/* thêm vào thẻ img thuộc tính loading="lazy" => ảnh chưa load khi người dùng chưa di chuyển đến đoạn văn bản chứa ảnh */
