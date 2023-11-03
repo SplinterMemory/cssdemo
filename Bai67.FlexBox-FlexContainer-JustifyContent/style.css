@@ -1,0 +1,35 @@
+/* justify-content */
+/* Đặt thuộc tính là display:flex mặc định sẽ sinh ra 2 trục main axis nằm ngang, cross axis nằm dọc */
+/* justify-content sẽ căn các phần tử theo trục main axis => phần sau sẽ có xoay trục */
+/* main start: bên trái, main end: nằm bên phải */
+/* thuộc tính default sẽ là justify-content: flex-start, điểm bắt đầu sẽ là main start */
+* {
+  font-size: 1.5rem;
+}
+body {
+  margin: 0;
+}
+.container {
+  display: flex;
+  background-color: cyan;
+  /* mặc định là start hoặc flex-start */
+  justify-content: start;
+  /* item dồn về phía main end */
+  /* = với justify-content:flex-end */
+  justify-content: end;
+  /* item sẽ dồn vào giữa khối container */
+  justify-content: center;
+  /* các item ngoài cùng sẽ dồn ra sát lề, còn khoảng cách giữa các item còn lại là = nhau */
+  justify-content: space-between;
+  /* khoảng trắng xung quanh các phần tử là như nhau */
+  /* box 1 có 2 khoảng trắng 2 bên, box 2 cũng có 2 khoảng trắng 2 bên */
+  /* => khoảng cách giữa box 1 và box 2 sẽ gấp đôi khoảng cách [box 1 (phần tử đầu tiên) so với lề] */
+  /* hay khoảng cách giữa 2 thằng gấp đối thằng ở rìa */
+  justify-content: space-around;
+  /* tạo ra các khoảng trống bằng nhau và bằng khoảng trống với lề */
+  /* justify-content: space-evenly; */
+}
+
+.box {
+  background-color: blue;
+}

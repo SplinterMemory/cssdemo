@@ -1,0 +1,42 @@
+/* PageLayout: Còn gọi là bố cục - dàn trang cơ bản (toàn bộ trang sẽ gọi là page layout) */
+/* là cách ta xếp đặt khối bộ cục con (component layout) lên trên webpage */
+/* việc xếp đặt giúp cho trang web nhìn đẹp, thu hút người xem và truyền tải nội dung 1 cách trật tự, logics */
+
+/* Các component layout là các bố cục con, nơi mà: text, images, video và các nội dung khác được xếp đặt */
+
+/* có 3 cách phổ biến để xây dụng layout: float layout, flexbox, css grid */
+
+/* C1.Float Layout */
+/* Trên 1 page layout có nhiều component layout, float layout có thể giúp trang dàn theo chiều ngang hoặc chữ bao quanh ảnh */
+/* Ở trạng thái mặc định các phần tử */
+/* 1.inline: nằm trên cùng hàng */
+/* 2.block: sẽ chiếm hết chiều ngang */
+/* Các phần tử này sẽ sắp xếp theo chiều dọc từ trên xuống dưới */
+
+.pic1 {
+  /* img: mặc định display:inline đang nằm trên cùng 1 hàng */
+  width: 200px;
+  /* thêm thuộc tính float:left ảnh sẽ trôi sang trái */
+  /* đưa phần tử ra khỏi luồng và sang bên trái */
+  float: left;
+  /* thêm thuộc tính float:right ảnh sẽ trôi sang phải */
+  float: right;
+}
+
+.pic2 {
+  width: 200px;
+  float: left;
+}
+
+/* Khi sử dụng thuộc tính float: left, image bị trôi khỏi luồng bình thường, các phần tử còn lại sẽ bao quanh phần tử image */
+/* Trong trường hợp muốn 1 phần tử nào đó không bị chèn ép để bao quanh hình (không bị ảnh hưởng bởi float), ta cần sử dụng */
+/* clear: left; clear giá trị float bên trái */
+/* clear: right; clear giá trị float bên phải */
+/* clear: both; clear cả 2 hướng */
+
+p:last-child {
+  clear: right;
+  /* xóa thuộc tính float:right của ảnh pic1*/
+  /* còn nếu thuộc tính của ảnh là float:left thì dùng clear:left */
+  /* nếu 2 bên đều có ảnh thì dùng clear:both */
+}

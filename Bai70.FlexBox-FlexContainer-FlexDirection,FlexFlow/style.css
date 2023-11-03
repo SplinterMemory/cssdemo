@@ -1,0 +1,57 @@
+/* flex-direction:row-reverse xoay hướng trục main axis, trục cross axis không đổi */
+/* giá trị mặc định là flex-direction:row  */
+
+/* flex-direction:column, column-reverse */
+/* main axis sẽ thành trục thằng đứng, cross axis sẽ thành trục ngang */
+
+/* flex-flow: viết tắt của flex-wrap và flex-direction */
+.container {
+  height: 200px;
+  display: flex;
+  background: cyan;
+
+  /* flex-direction: row; */
+  /* hướng trục main thay đổi từ phải qua trái, main start bên phải, main end bên trái */
+  /* ảnh hưởng đến thuộc tính justify-content */
+  /* flex-direction: row-reverse; */
+  /* nếu dùng row-reverse thì giá trị justify-content là flex-end và end sẽ khác nhau */
+  /* start và end luôn ở trái và phải ko quan tâm đến hướng của trục main */
+  /* khi muốn quan tâm hướng ta dùng thêm flex */
+  /* justify-content: flex-end; */
+  /* main axis sẽ thành trục thằng đứng, cross axis sẽ thành trục ngang */
+  /* item đang xếp theo thứ tự từ trên xuống dưới (theo trục main) */
+  /* flex-direction: column; */
+  /* theo trục main axis, giờ đã thành trục thẳng đứng */
+  /* justify-content: flex-end; */
+  /* theo trục cross axis giờ đã thành trục nằm ngang */
+  /* mặc định */
+  /* align-items: stretch; */
+  /* dồn sang bên trái */
+  /* align-items: flex-start; */
+  /* main là trục thẳng đứng nhưng từ dưới lên trên */
+  /* flex-direction: column-reverse; */
+  /* justify-content: flex-end; */
+  /* align-items: flex-end; */
+}
+
+.box {
+  background-color: blue;
+  border: 1px solid black;
+}
+
+/* flex-flow */
+.container2 {
+  margin-top: 30px;
+  display: flex;
+  background: red;
+  /* flex-wrap: wrap;
+  flex-direction: row-reverse; */
+  /* viết tắt */
+  /*flex-flow: giá trị đầu tiên là flex-wrap, thứ 2 là flex-direction */
+  flex-flow: wrap row-reverse;
+}
+
+.snow {
+  background-color: blue;
+  border: 1px solid black;
+}

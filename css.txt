@@ -393,6 +393,24 @@ search box_shadow
   position: absolute
   position: fixed
   z-index
+  sticky: bôi đen Ctrl Shift L phím tắt chọn nhiều phần tử giống nhau
+  hoặc ctrl D chọn từng phần tử giống nhau
+  
+  *) PageLayout, Component Layout
+  Layout
+  Flexbox
+  FlexContainer
+  Justify-content
+  align-items
+  flex-wrap
+  align-content
+  flex-direction
+  flex-flow
+  
+  Flex Item
+  Align Self
+  Flex Grow
+
 
 
 

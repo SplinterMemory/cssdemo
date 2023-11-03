@@ -1,0 +1,37 @@
+/* justify-content: căn các phần tử theo trục main axis */
+/* align-items: căn các phần theo trục cross axis (kéo giãn các phần tử = container theo trục cross) */
+/* Áp dụng trên 1 hàng duy nhất, khác với align-content */
+* {
+  font-size: 1.5rem;
+}
+body {
+  margin: 0;
+}
+.container {
+  /* nếu ko set height thì sẽ mặc định lấy của thằng con có height cao nhất */
+  height: 300px;
+  display: flex;
+  background-color: cyan;
+  justify-content: space-evenly;
+  /* ở trạng thái mặc định, các phần tử khác như box2, box3,.. sẽ tự động giãn ra để vừa box chứa */
+  align-items: stretch;
+  /* chỉ có box 1 là 200px, các phần tử khác sẽ dồn về cross start */
+  align-items: flex-start;
+  /* chỉ có box 1 là 200px, các phần tử khác sẽ dồn về cross end */
+  align-items: flex-end;
+  /* các phần tử sẽ nằm ở giữa box chứa nó theo trục cross */
+  align-items: center;
+  /* căn theo chân phần tử của thằng có fontSize to nhất (ít dùng) */
+  align-items: baseline;
+}
+
+.box {
+  background-color: blue;
+}
+
+.box1 {
+  /* khi set height là 200px cho box 1 thì vì giá trị mặc định: của class container là align-items:stretch  */
+  /* các phần tử khác như box2, box3 sẽ tự động giãn ra để vừa box chứa */
+  height: 200px;
+  font-size: 3rem;
+}
