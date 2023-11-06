@@ -1,0 +1,163 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/* khôi phục lại cỡ chữ mặc định theo rem */
+
+body {
+  font-size: 1.6rem;
+  font-family: "Poppins", sans-serif;
+}
+/* thuộc tính dùng chung */
+a {
+  text-decoration: none;
+}
+
+.main-content {
+  width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  /* muốn cách mỗi bên 24px */
+  max-width: calc(100% - 48px);
+}
+
+.btn {
+  /* thẻ a: inline => inline block để thêm padding */
+  display: inline-block;
+  padding: 0 41px;
+  /* nút bấm cao 50px */
+  line-height: 50px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.6rem;
+  border-radius: 24.5px;
+  background: #171100;
+  /* chiều rộng tối thiểu của nút bấm 118px */
+  min-width: 118px;
+}
+
+/* header */
+
+.header {
+  background: #fffcf4;
+}
+
+.header.fixed {
+  /* tính toán để cách bên trên 1 khoảng 8px sẽ dính lại */
+  /* lấy padding trên 36px - 8px (cách bên trên 1 khoảng 8px)  */
+  top: -28px;
+  position: sticky;
+}
+
+.header .body {
+  display: flex;
+  align-items: center;
+  /* dù cách bức ảnh phía dưới là 64px nhưng sẽ dùng sticky để gắn => để dưới là 8px */
+  padding: 36px 0 8px;
+}
+
+.nav ul {
+  display: flex;
+}
+
+.nav {
+  /* kéo hết cả các phần tử đằng sau nó về bên phải */
+  margin-left: auto;
+}
+
+.nav a {
+  color: #5f5b53;
+  /* bỏ phần này vì box chứa nó là thẻ inline, nội dung luôn nằm chính giữa */
+  /* text-align: center; */
+  /* quy đổi 16px => 1.6rem */
+  font-size: 1.6rem;
+  /* không cần vì đã đặt mặc định */
+  /* font-style: normal;
+  font-family: "Poppins", sans-serif; */
+  /* không cần => bỏ đi */
+  /* line-height: 28px;  */
+  /* vì tổng khoảng cách là 42px (21+21=42px) */
+  /* sử dụng padding để tăng tương tác của người dùng click */
+  padding: 8px 21px;
+  /* thêm vào để căn dấu gạch ngang dưới chân */
+  position: relative;
+}
+
+.nav li.active a,
+.nav a:hover {
+  color: #171100;
+  /* thuộc tính này sẽ khiến chữ bị giật khi hover */
+  /* font-weight: 600; */
+  /* text-shadow: hoff voff blur #000; */
+  /* trục nằm ngang, trục thẳng đứng, độ nhòe, màu sắc */
+  text-shadow: 1px 0 0 currentColor;
+}
+
+.nav li.active a::after {
+  /* thêm dấu gạch ngang dưới chân khi trạng thái là active */
+  /* vào tab computed, với trạng thái mặc định là inline sẽ không set được width height */
+  /* cần thêm display:inline-block */
+  content: "";
+  width: 12px;
+  height: 2px;
+  flex-shrink: 0;
+  border-radius: 1px;
+  background: #171100;
+  display: inline-block;
+  /* căn dấu gạch ngang dưới chân */
+  position: absolute;
+  /* nãy thêm padding cho cha là 21px */
+  left: 21px;
+  /* dưới phần tử cha 6px */
+  bottom: 6px;
+}
+
+header .btn-sign-up {
+  min-width: 144px;
+}
+
+header .action {
+  /* 70px - 21px = 49px */
+  margin-left: 49px;
+}
+
+/* ------hero----- */
+.hero {
+  /* 61 -8 = 53px */
+  /* vì margin không đổ được nền => sử dụng padding thay cho margin */
+  /* margin-top: 51px; */
+  padding-top: 53px;
+  background: #fffcf4;
+}
+
+.hero .body {
+  display: flex;
+}
+
+.hero .media-block {
+  /* lấy 570 chiều rộng / chiều rộng main content 1440 */
+  width: 39%;
+  position: relative;
+}
+
+.hero .content-block {
+  width: 61%;
+}
+
+.hero .media-block .img {
+  width: 470px;
+  height: 685px;
+  /* không bị vỡ ảnh */
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.hero-summary {
+  position: absolute;
+  bottom: 48px;
+  right: 0;
+}

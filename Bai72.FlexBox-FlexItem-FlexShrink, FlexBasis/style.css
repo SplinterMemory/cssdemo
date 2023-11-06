@@ -1,0 +1,49 @@
+/* flex-shrink: xác định khả năng co lại của item nếu cần khi trình duyệt không đủ chỗ chứa */
+/* = 0: không bị co lại, 1: default, 2: co lại 2 lần, 3... */
+/* có container flex có chiều rộng giới hạn, tổng kích thước của phần tử con vượt quá chiều rộng đó, thì phần tử tác động thuộc tính flex-shrink   */
+/* đặt giá trị là 2 hoặc 3 sẽ co lại nhanh hơn phần tử con khác có giá trị flex-shrink là 1 (mặc định) để giúp thích ứng với không gian hạn chế hơn */
+
+.container {
+  height: 150px;
+  display: flex;
+  background-color: cyan;
+  /* flex-wrap: wrap; */
+  /* over-flow:auto */
+}
+
+.box {
+  background-color: blue;
+  border: 1px solid black;
+  /* có 6 item nên mỗi item sẽ bị co lại và không thể chiếm 30% */
+  /* nếu muốn mỗi item chỉ chiếm 30% thì dùng thuộc tính flex-wrap:wrap ở thẻ cha */
+  width: 30%;
+  /* flex-shrink = 0 thì sẽ không bị co lại, đảm bảo độ rộng như lúc đầu */
+  /* và xuất hiện thanh cuốn */
+  /* flex-shrink: 0; */
+}
+
+.box1,
+.box2 {
+  /* khi chúng ta co trình duyệt lại */
+  /* có ngưỡng co lại min, khi chạm đến ngưỡng của từ dài nhất sẽ dừng lại, 
+  đây là chiều rộng tối thiểu để đảm bảo không bị mất nội dung bên trong */
+  flex-shrink: 0;
+}
+
+/* ------------------------------------- */
+/* flex-basis: Set main size item (lưu ý main size theo trục main axis) */
+/* Trục của main axis và cross axis có thể bị xoay nếu dùng nếu dùng thuộc tính flex-direction: column */
+/* mặc định flex-direction: row thì flex-basis:30% = width:30% */
+/* nếu flex-direction: column thì flex-basis:30% = height:30% (vì nó ăn theo hướng của trục main axis)  */
+.container2 {
+  height: 150px;
+  display: flex;
+  background-color: cyan;
+  flex-direction: column;
+}
+.boxes {
+  /* width: 30%; */
+  flex-basis: 30%;
+  background-color: red;
+  border: 1px solid black;
+}

@@ -410,6 +410,9 @@ search box_shadow
   Flex Item
   Align Self
   Flex Grow
+  Flex Shrink
+  Flex Basis
+  Flex: cú pháp viết tắt
 
 
 

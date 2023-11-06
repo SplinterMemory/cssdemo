@@ -1,0 +1,60 @@
+/* flex: flex-grow flex-shrink flex-basis */
+/* Cách viết tắt sử dụng đồng thời 3 thuộc tính */
+/* Đây là cách viết tắt sử dụng đồng thời 3 thuộc tính */
+/* flex-grow: 0 (default), 1, 2, ... Chia tỷ lệ giãn chiếm theo trọng số */
+/* flex-shrink: 0-không bị co lại | 1 (default) | 2 | 3 | ... xác định khả năng co lại của item để thích nghi với không gian hạn chế */
+/* flex-basis: set main size item theo trục main axis */
+/* kích thước của item sẽ theo thứ tự ưu tiên từ 1 đến 4, 4 là ưu tiên cao nhất */
+/* 4. min-width/ max-width */
+/* 3. flex-basis */
+/* 2. width */
+/* 1. content-width: độ rộng của content */
+
+/* trong trường hợp mặc định của display:flex thì các item sẽ nằm trên cùng 1 hàng và có độ rộng bằng nội dung bên trong */
+
+.box {
+  /* nếu co trình duyệt lại thì chỉ có thể co đến min-width = độ rộng của từ dài nhất, nếu co tiếp sẽ mất đi */
+  /* max-width: độ rộng tối đa để có thể chứa được nội dung nằm trên cùng 1 hàng mà không bị bẻ xuống dòng hoặc cắt đoạn */
+  /* min-width: độ rộng tối thiểu, có kích thước bằng chiều dài của từ dài nhất */
+  /* flex-basis: 200px; */
+  /* width: 100px; */
+  /* max-width: 100px; */
+  /* Nếu max-width < flex-basis -> max-width */
+  /* nếu max-width > flex-basis -> flex-basis */
+  /* trong trường hợp trình duyệt đủ chỗ chứa thì độ rộng tối thiểu của mỗi box sẽ là 200px */
+  /*khi co trình duyệt lại,  các item sẽ không thể co hơn giá trị min-width đã đặt mà sẽ dần mất đi  */
+  /* min-width: 200px; */
+  /* flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: 100px; */
+  flex: 0 1 100px;
+  /* flex-grow:1 */
+  flex: 1;
+}
+
+/* ----------------- */
+/* order: thay đổi thứ tự các item */
+
+.box1 {
+  background-color: cyan;
+}
+
+.box2 {
+  background-color: red;
+  /* thay đổi thứ tự các item mà không cần can thiệp vào html */
+  order: 1;
+}
+
+.box3 {
+  background-color: blue;
+  /* giá trị order cao nhất sẽ nằm ngoài cùng */
+  order: 2;
+}
+
+.box4 {
+  background-color: green;
+}
+
+.container {
+  display: flex;
+}

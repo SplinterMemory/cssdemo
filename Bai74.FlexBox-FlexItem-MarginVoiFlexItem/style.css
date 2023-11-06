@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  background-color: cyan;
+  height: 150px;
+  flex-direction: column;
+}
+
+.box {
+  background-color: red;
+}
+
+.box2 {
+  background-color: blue;
+  /* căn thằng box2 thì sẽ kéo theo cả thằng đằng sau nó sang bên phải */
+  /* margin-left: auto; */
+  margin-top: auto;
+}
+
+.box3 {
+  background-color: green;
+}
+
+.box4 {
+  background-color: purple;
+}
+
+/* ---------------- */
+
+.container2 {
+  margin-top: 30px;
+  display: flex;
+  background-color: cyan;
+  height: 100px;
+  /* align-items: center;
+  justify-content: center; */
+}
+
+.fa-youtube {
+  /* muốn căn giữa đơn giản chỉ cần để box cha là display:flex và box con là margin: auto */
+  margin: auto;
+  font-size: 1.5rem;
+  color: red;
+}
