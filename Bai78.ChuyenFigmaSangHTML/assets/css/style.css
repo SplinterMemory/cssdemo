@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+:root {
+  --font-heading: "Sen", sans-serif;
+  --primary-color: #ffb900;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -12,32 +17,71 @@ body {
   font-size: 1.6rem;
   font-family: "Poppins", sans-serif;
 }
-/* thuộc tính dùng chung */
+/* thuộc tính dùng chung:common */
 a {
   text-decoration: none;
 }
 
 .main-content {
-  width: 1440px;
+  /* 1440 - 135 * 2 = 1170 */
+  width: 1170px;
   margin-left: auto;
   margin-right: auto;
   /* muốn cách mỗi bên 24px */
   max-width: calc(100% - 48px);
 }
 
+.line-clamp {
+  /* nếu text dài quá sẽ hiện dấu .., xem phần text-overflow */
+
+  overflow: hidden;
+  /* muốn dấu 2 chấm ở dòng thứ 2, tương tự với 3, 4 dòng */
+  /* nếu ko điền thì nhận giá trị là 1 */
+  -webkit-line-clamp: var(--line-clamp, 1);
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+}
+
+.line-clamp.line-2 {
+  /* hiện dấu ... ở dòng thứ 2 */
+  -webkit-line-clamp: 2;
+}
+
+.break-all {
+  /* thẻ nào text viết liền có nguy cơ bị dài quá phá vỡ giao diện thì dùng class */
+  word-break: break-all;
+}
+
+.heading-lv2 {
+  color: #171100;
+  font-family: var(--font-heading);
+  font-size: 3.8rem;
+  font-weight: 700;
+  line-height: 1.26; /* 126.316% */
+  letter-spacing: -0.76px;
+}
+
 .btn {
   /* thẻ a: inline => inline block để thêm padding */
   display: inline-block;
-  padding: 0 41px;
+  padding: 0 16px;
   /* nút bấm cao 50px */
   line-height: 50px;
   color: #fff;
   font-weight: 600;
   font-size: 1.6rem;
-  border-radius: 24.5px;
+  /* border-radius: 24.5px; */
+  /* chuyển thành 999px */
+  border-radius: 999px;
   background: #171100;
   /* chiều rộng tối thiểu của nút bấm 118px */
   min-width: 118px;
+}
+
+.btn:hover {
+  /* khi di vào sẽ hơi mờ */
+  opacity: 0.9;
+  cursor: pointer;
 }
 
 /* header */
@@ -51,6 +95,7 @@ a {
   /* lấy padding trên 36px - 8px (cách bên trên 1 khoảng 8px)  */
   top: -28px;
   position: sticky;
+  z-index: 1;
 }
 
 .header .body {
@@ -127,25 +172,22 @@ header .action {
 
 /* ------hero----- */
 .hero {
-  /* 61 -8 = 53px */
+  /* 64 -8 = 56px */
   /* vì margin không đổ được nền => sử dụng padding thay cho margin */
-  /* margin-top: 51px; */
-  padding-top: 53px;
+  /* margin-top: 56px; */
+  /* trên 56px, dưới 65px */
+  padding: 56px 0 65px;
   background: #fffcf4;
 }
 
 .hero .body {
   display: flex;
 }
-
+/* hero-left: khối bên trái */
 .hero .media-block {
-  /* lấy 570 chiều rộng / chiều rộng main content 1440 */
-  width: 39%;
+  /* lấy 570 chiều rộng / chiều rộng main content 1170 */
+  width: 48%;
   position: relative;
-}
-
-.hero .content-block {
-  width: 61%;
 }
 
 .hero .media-block .img {
@@ -157,7 +199,357 @@ header .action {
 }
 
 .hero-summary {
+  /* icon cách bên trái 24px */
+  padding: 24px;
+  width: 270px;
   position: absolute;
   bottom: 48px;
   right: 0;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0px 16px 32px 0px rgba(0, 0, 0, 0.05);
+}
+
+.hero-summary .item {
+  display: flex;
+  /* muốn icon phải nằm giữa 2 dòng text */
+  align-items: center;
+}
+
+/* chỉ tác động vào class item mà nằm đằng sau 1 item khác */
+.hero-summary .item + .item {
+  margin-top: 22px;
+}
+
+.hero-summary .icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  /* căn giữa icon */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff9e8;
+}
+
+.hero-summary .icon2 {
+  background: #a13fb9;
+}
+
+.hero-summary .icon2 {
+  background: #ebeaff;
+}
+
+.hero-summary .info {
+  margin-left: 16px;
+}
+
+.hero-summary .label {
+  color: #5f5b53;
+  font-size: 1.4rem;
+  line-height: 1.86; /*185.714%*/
+}
+
+.hero-summary .title {
+  color: #171100;
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.67; /* 166.667% */
+}
+/* hero-right: khối bên phải */
+.hero .content-block {
+  width: 52%;
+  padding-left: 130px;
+  padding-top: 64px;
+}
+
+.hero .heading {
+  color: #171100;
+  /* gắn biến trên root */
+  font-family: var(--font-heading);
+  font-size: 5.8rem;
+  font-weight: 700;
+  line-height: 1.17; /* 117.241% */
+  letter-spacing: -1.16px;
+}
+
+.hero .desc {
+  color: #5f5b53;
+  font-size: 1.8rem;
+  line-height: 1.67; /* 166.667% */
+  margin-top: 22px;
+}
+
+.hero .cta-group {
+  margin-top: 38px;
+  display: flex;
+  align-items: center;
+}
+
+.hero .hero-cta {
+  min-width: 180px;
+  /* cao 64px => dùng line height để set chiều cao */
+  line-height: 64px;
+  background-color: var(--primary-color);
+}
+
+.hero .watch-video {
+  /* bỏ viền */
+  border: none;
+  /* nền trong suốt */
+  background: transparent;
+  display: flex;
+  margin-left: 28px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.hero .watch-video .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  background: #fff;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.07);
+}
+
+.hero .watch-video span {
+  color: #171100;
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.67; /* 166.667% */
+  margin-left: 14px;
+}
+
+.hero .desc-recent {
+  margin-top: 48px;
+}
+
+.hero .stats {
+  margin-top: 8px;
+}
+
+.hero .stats strong {
+  margin-right: 15px;
+  color: #171100;
+  font-family: var(--font-heading);
+  font-size: 4.4rem;
+  font-weight: 700;
+  line-height: 1.23; /* 122.727% */
+}
+
+.hero .stats strong:nth-child(2) {
+  margin-left: 28px;
+}
+
+/* ------------popular---------- */
+.popular {
+  padding: 65px 0;
+  /* đã dùng padding là 65px nên phải trừ đi: 200 - 65 */
+  margin-top: 135px;
+}
+
+.popular-top .desc {
+  width: 458px;
+  margin-top: 16px;
+  color: #5f5b53;
+  font-size: 1.8rem;
+  line-height: 1.67; /* 166.667% */
+}
+
+.popular-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.popular-top .controls {
+  display: flex;
+  /* khoảng cách giữa 2 nút là 18px */
+  gap: 18px;
+}
+
+.popular-top .control-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* trong suốt */
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  border: 1px solid var(--primary-color);
+  width: 40px;
+  height: 40px;
+  color: var(--primary-color);
+}
+.popular-top .control-btn.active,
+.popular-top .control-btn:hover {
+  color: #fff;
+  background: var(--primary-color);
+  cursor: pointer;
+}
+
+.popular .course-list {
+  margin-top: 55px;
+  display: flex;
+  /* các bức ảnh cách nhau 1 khoảng là 30px */
+  gap: 30px;
+}
+
+.popular .course-item {
+  border-radius: 12px;
+  border: 1px solid #e2dfda;
+  background: #fff;
+  /* có 3 item */
+  /* cú pháp viết tắt flex-grow flex-shrink flex-basis */
+  flex: 1;
+}
+
+.popular .course-item:hover {
+  /* khi hover sẽ mất border */
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0px 18px 36px 0px rgba(0, 0, 0, 0.05);
+  /* để viền trong suốt */
+  border: 1px solid transparent;
+}
+
+.popular .course-item .thumb {
+  width: 100%;
+  height: 278px;
+  border-radius: 12px 12px 0px 0px;
+  /* để ảnh không bị méo */
+  object-fit: cover;
+}
+
+.popular .course-item .info {
+  padding: 16px 22px 22px;
+}
+.popular .course-item .foot,
+.popular .course-item .rating,
+.popular .course-item .head {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.popular .course-item .title a {
+  color: #171100;
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.67; /* 166.667% */
+}
+
+.popular .rating .value {
+  color: #fea31b;
+  line-height: 1.75; /* 175% */
+  margin-left: 6px;
+}
+
+.popular .course-item .desc {
+  margin-top: 6px;
+  color: #5f5b53;
+  font-size: 1.4rem;
+  line-height: 1.86; /* 185.714% */
+}
+
+.popular .course-item .foot {
+  margin-top: 12px;
+}
+
+.popular .course-item .price {
+  color: #171100;
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.67; /* 166.667% */
+}
+
+.popular .course-item .btn-book {
+  border: none;
+}
+
+.popular .course-item .btn-book:hover {
+  border: none;
+  background: var(--primary-color);
+}
+
+/* --------------feedback---------- */
+.feedback {
+  /* khối popular đang để padding: 65px nên giờ lấy khoảng cách 200px - 65px */
+  margin-top: 135px;
+  padding: 96px 0;
+  background: #2e2100;
+}
+
+.feedback-list {
+  display: flex;
+  /* đang chia 3 item theo chiều rộng => phải cắt bỏ phần thừa */
+  /* overflow: hidden; */
+}
+
+.feedback-item {
+  display: flex;
+  justify-content: space-between;
+  /* các item con sẽ không co lại */
+  /* flex-shrink: 0; */
+}
+
+.feedback-item .avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.feedback-item .info .member-name {
+  margin-top: 18px;
+  color: #f7f7f7;
+  font-family: var(--font-heading);
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1.42; /* 141.667% */
+}
+
+.feedback-item .info .desc {
+  margin-top: 4px;
+  color: #bfbcb2;
+  font-size: 1.4rem;
+  line-height: 1.86;
+}
+
+.feedback-item .dots {
+  display: flex;
+  margin-top: 28px;
+  /* các dot cách nhau 6px */
+  gap: 6px;
+}
+
+.feedback-item .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #634700;
+  cursor: pointer;
+}
+
+.feedback-item .dot.active {
+  background: var(--primary-color);
+  /* thằng nào active rồi bỏ hình bàn tay đi */
+  cursor: default;
+}
+
+.feedback-item .content {
+  /* 700 / 1170  */
+  width: 66%;
+  /* hoặc có thể đặt  vào thẻ cha justify-content:space-between */
+  /* margin-left: auto; */
+}
+
+.feedback-item blockquote {
+  color: #fff;
+  font-size: 2.6rem;
+  font-style: italic;
+  line-height: 1.54; /* 153.846% */
 }
