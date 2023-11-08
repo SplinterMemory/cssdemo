@@ -486,14 +486,21 @@ header .action {
 .feedback-list {
   display: flex;
   /* đang chia 3 item theo chiều rộng => phải cắt bỏ phần thừa */
-  /* overflow: hidden; */
+  /* cắt bỏ phần thừa */
+  overflow: hidden;
 }
 
 .feedback-item {
+  /* phải đặt width = 100% không sẽ vỡ giao diện nếu dùng flex-shrink */
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   /* các item con sẽ không co lại */
-  /* flex-shrink: 0; */
+  flex-shrink: 0;
+  /* dịch để nhảy sang item 2 */
+  /* transform: translateX(-100%); */
+  /* thêm hiệu ứng trượt */
+  /* transition: all ease 0.5s; */
 }
 
 .feedback-item .avatar {
@@ -544,7 +551,7 @@ header .action {
   /* 700 / 1170  */
   width: 66%;
   /* hoặc có thể đặt  vào thẻ cha justify-content:space-between */
-  /* margin-left: auto; */
+  margin-left: auto;
 }
 
 .feedback-item blockquote {
@@ -552,4 +559,293 @@ header .action {
   font-size: 2.6rem;
   font-style: italic;
   line-height: 1.54; /* 153.846% */
+}
+
+/* --------------feature 1---------- */
+.features {
+  /* cách top 200: 135+ 65 */
+  margin-top: 135px;
+  padding: 65px 0;
+}
+
+.features .body {
+  display: flex;
+  /* đẩy kịch 2 phần tử sang 2 bên */
+  justify-content: space-between;
+}
+
+.features .images {
+  display: flex;
+  /* 2 bức ảnh cách nhau 30pxs */
+  gap: 30px;
+}
+
+.features .images img {
+  width: 270px;
+  height: 404px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.features .lower {
+  margin-top: 34px;
+}
+
+.features .content {
+  /* 470 / 1170 */
+  width: 41%;
+  display: flex;
+  /* xoay trục */
+  flex-direction: column;
+  /* căn giữa theo trục thẳng đứng */
+  justify-content: center;
+}
+
+.features .desc {
+  margin-top: 16px;
+  color: #5f5b53;
+  font-size: 1.6rem;
+  font-style: normal;
+  line-height: 1.75; /* 175% */
+}
+
+.features .cta-btn {
+  margin-top: 32px;
+  width: 137px;
+  height: 50px;
+  background: var(--primary-color);
+}
+
+/* --------------feature 2---------- */
+
+.features-2nd .body {
+  /* trục main xoay chiều: từ phải sang trái */
+  flex-direction: row-reverse;
+}
+
+.features-2nd {
+  /* 200 - padding feature(65) - padding feature 2nd(65) */
+  margin-top: 70px;
+}
+
+.features-2nd .content {
+  /* 570/1170 */
+  width: 49%;
+}
+
+.features-2nd .images img {
+  width: 470px;
+  height: 440px;
+}
+
+/* --------------blog---------- */
+.blog {
+  /* 200 - 65(padding của thằng trên) */
+  margin-top: 135px;
+  padding: 96px 0;
+  background: #fffcf4;
+}
+
+.blog .blog-top {
+  text-align: center;
+}
+
+.blog .blog-top .desc {
+  margin: 16px auto 0;
+  width: 448px;
+  color: #696262;
+  font-size: 1.6rem;
+  line-height: 1.75; /* 175% */
+}
+
+.blog .blog-list {
+  margin-top: 55px;
+  display: flex;
+  gap: 30px;
+  overflow: hidden;
+}
+
+.blog .item {
+  /* khoảng cách giữa các item 30 + 30 = 60, có 3 item mỗi item sẽ bị hụt 20px */
+  width: calc(33.33% - 20px);
+  border-radius: 16px;
+  background: #fff;
+  flex-shrink: 0;
+}
+
+.blog .item:hover {
+  box-shadow: 0px 16px 32px 0px rgba(0, 0, 0, 0.05);
+}
+
+.blog .item .thumb {
+  border-radius: 16px 16px 0px 0px;
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.blog .item .info {
+  padding: 20px 20px 28px;
+}
+
+.blog .info .date {
+  /* thẻ date sẽ là thẻ cha của date before */
+  /* dùng inline-flex thay cho flex để thẻ cha chỉ chứa vừa nội dung */
+  display: inline-flex;
+  align-items: center;
+  color: #5f5b53;
+  font-size: 1.4rem;
+  line-height: 1.86; /* 185.714% */
+  position: relative;
+  /* dùng padding vì after là 1 phần tử của date */
+  padding-bottom: 12px;
+}
+
+.blog .info .date::before {
+  content: "";
+  /* để set được kích thước cho dấu . */
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  margin-right: 4px;
+}
+
+.blog .info .date::after {
+  content: "";
+  /* để set được kích thước cho thanh ngang */
+  display: inline-block;
+  /* độ rộng của thanh luôn lệch sang bên phải 27px so với date */
+  /* dùng để khi phần date dài ra thì thanh ngang sẽ dài ra theo */
+  right: -27px;
+  /* width: 160px; */
+  height: 1px;
+  border-radius: 0.5px;
+  background: #e2dfda;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.blog .item .title {
+  margin-top: 12px;
+  color: #171100;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.75; /* 175% */
+}
+
+.blog .item .btn {
+  margin-top: 12px;
+  font-size: 1.4rem;
+}
+
+.blog .item .btn:hover {
+  background: var(--primary-color);
+}
+
+.blog .dots {
+  display: flex;
+  gap: 6px;
+  margin-top: 38px;
+  justify-content: center;
+}
+.blog .dots .dot {
+  border-radius: 50%;
+  background: #5f5b53;
+  width: 6px;
+  height: 6px;
+  cursor: pointer;
+}
+.blog .dots .dot.active {
+  background: var(--primary-color);
+  cursor: default;
+}
+
+/* --------------footer---------- */
+
+.footer {
+  margin-top: 96px;
+  background: #2e2100;
+  padding-top: 96px;
+}
+
+.footer .row {
+  display: flex;
+  /* thêm gạch chân */
+  padding-bottom: 38px;
+  border-bottom: 1px solid #59554b;
+}
+
+.footer .row .column:first-child {
+  /* khối đầu */
+  /* 267+145 / 1170 */
+  width: 35%;
+}
+
+.footer .row .column {
+  /* 3 khối còn lại: (100-35)/3 */
+  width: 21.6%;
+}
+
+.footer .desc {
+  margin-top: 18px;
+  color: #bfbcb2;
+  font-size: 1.4rem;
+  line-height: 1.86; /* 185.714% */
+  max-width: 267px;
+}
+
+.footer .socials {
+  display: flex;
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.footer .title {
+  /* gạch ngang có border radius phải dùng before after */
+  /* còn không thì có thể dùng border-bottom, border-top,.. */
+  border-bottom: 1px solid #59554b;
+  padding-bottom: 14px;
+  /* 130 (độ rộng thanh) - 82(độ rộng chữ) */
+  padding-right: 48px;
+  /* đổi sang inline-block để nó không chiếm nguyên dòng  */
+  display: inline-block;
+  font-size: 1.6rem;
+  line-height: 1.75; /* 175% */
+  color: #fff;
+}
+
+.footer .list {
+  margin-top: 28px;
+}
+
+footer .list a {
+  /* vì thẻ a là inline không margin top margin bottom được */
+  display: inline-block;
+  color: #bfbcb2;
+  font-size: 1.4rem;
+  line-height: 1.86; /* 185.714% */
+  margin-bottom: 12px;
+}
+
+.footer .list li:last-child a {
+  margin-bottom: 0;
+}
+
+.footer .list strong {
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.86; /* 185.714% */
+}
+
+.footer .copy-right p {
+  padding: 28px 0;
+  display: block;
+  text-align: center;
+  color: #807d74;
+  font-size: 1.4rem;
+  line-height: 1.86; /* 185.714% */
 }
