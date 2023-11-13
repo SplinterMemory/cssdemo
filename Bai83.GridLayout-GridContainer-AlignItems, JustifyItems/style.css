@@ -1,0 +1,42 @@
+/* align-items: sử dụng để căn chỉnh nội dung bên trong phần tử con theo trục dọc (trục cột) */
+/* justify-items: căn chỉnh nội dung bên trong phần tử con theo trục ngang (trục hàng) */
+.box1,
+.box4,
+.box5 {
+  background: aqua;
+}
+
+.box2,
+.box3 {
+  background: blue;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 100px 200px;
+  grid-template-rows: 50px 100px 200px;
+  /* giá trị mặc định align-items:stretch */
+  /* align-items: stretch; */
+  /* thu về giữa, co lại chỉ bằng nội dung nó chứa */
+  /* align-items: center; */
+  /* dồn lên trên */
+  /* align-items: start; */
+  /* dồn xuống dưới */
+  /* align-items: end; */
+  justify-self: stretch;
+  /* chiều rộng co lại = nội dung chứa, tập trung về giữa  */
+  justify-items: center;
+  /* lệch sang trái  */
+  justify-items: left;
+  /* lệch sang phải  */
+  justify-items: right;
+  /* ngôn ngữ đọc từ trái qua phải, phải qua trái thì dùng start, end */
+  justify-items: start;
+  justify-items: end;
+}

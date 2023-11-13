@@ -1,0 +1,55 @@
+.box1,
+.box4,
+.box5 {
+  background-color: aqua;
+}
+
+.box2,
+.box3 {
+  background-color: blue;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+}
+
+.container {
+  display: grid;
+  /* ở điều kiện mặc định, mỗi item nằm trên 1 ô (grid cell) */
+  /* vì chia 3 cột nên hết 3 cột sẽ chuyển xuống hàng dưới */
+  grid-template-columns: 100px repeat(2, 50px);
+  grid-template-rows: repeat(7, 50px);
+  gap: 15px;
+}
+
+.box1 {
+  /* mặc định bắt đầu từ cột 1 */
+  /* grid-row-start: 1; */
+  /* điểm kết thúc mặc định đang là dòng 2 (line 2) chuyển xuống dòng 3 (line 3) */
+  /* grid-row-end: 3; */
+  /* chiếm bắt đầu từ cột 2, kết thúc là cột 4 */
+  /* grid-column-start: 2; */
+  /* grid-column-end: 4; */
+  /* nếu muốn kéo kịch theo chiều dòng, cột cũng có thể làm vậy */
+  /* grid-row-start: 1; */
+  /* grid-row-end: -1; */
+  /* Cú pháp viết tắt của câu lệnh trên */
+  grid-row: 1 / -1;
+  /* Cú pháp viết tắt của grid area */
+  /* grid-area: row-start column-start row-end column-end */
+}
+
+.box5 {
+  /* grid-column-start: 2; */
+  /* grid-column-end: 4; */
+}
+
+.box2 {
+  /* chiếm 2 dòng tính từ vị trí hiện tại */
+  grid-row: span 2;
+  /* chiếm 2 cột tính từ vị trí hiện tại */
+  grid-column: span 2;
+}

@@ -1,0 +1,46 @@
+/* align-content: Căn các item trong khối container theo trục column */
+/* justify-content: căn chỉnh các item trong khối container theo trục row */
+.box1,
+.box4,
+.box5 {
+  background: aqua;
+}
+
+.box2,
+.box3 {
+  background: blue;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  /* mặc định sẽ giống thẻ block, có chiều cao vừa = nội dung mà nó chứa */
+  display: grid;
+  /* phải set chiều cao */
+  height: 100vh;
+  grid-template-columns: 100px 200px 50px;
+  grid-template-rows: 50px 100px 200px;
+  background: yellow;
+  /* giá trị mặc định */
+  align-content: start;
+  /* khối item dịch xuống dưới của khung container */
+  align-content: end;
+  /* khoảng cách xung quanh giữa các item là = nhau và gấp đôi lề */
+  align-content: space-around;
+  /* khoảng cách giữa các item là = nhau, 2 item ngoài cùng sát lề */
+  align-content: space-between;
+  /* khoảng cách giữa các item là giống nhau ở tất cả mọi nơi */
+  align-items: space-evenly;
+  /* trạng thái mặc định */
+  justify-content: start;
+  /* chuyển sang lề bên phải */
+  justify-content: end;
+  justify-content: center;
+  justify-content: space-evenly;
+  justify-content: space-between;
+  justify-content: space-around;
+}

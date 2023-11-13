@@ -1,0 +1,72 @@
+/* Grid Layout
+là 1 phương pháp sắp xếp và cấu trúc trang web dựa trên lưới
+Cho phép chia trang web thành các ô hình chữ nhật và điều khiển vị trí các phần tử trên trang */
+
+/* Dùng grid kết hợp với flex box, bên ngoài 2 chiều thì dùng grid, bố cục bên trong 1 chiều thì dùng flex box */
+/* Khi đặt class cha là grid hoặc inline-grid thì tất cả các phần tử rời khỏi luồng thông thường và tuân theo quy tắc lưới của grid */
+
+.box1,
+.box4,
+.box5 {
+  background-color: aqua;
+}
+
+.box2,
+.box3 {
+  background-color: blue;
+}
+
+.box {
+  /* height: 50px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  /* chiếm hết nội dung */
+  display: grid;
+  /* chiếm vừa = nội dung mà nó chứa */
+  /* display: inline-grid; */
+  /* giá trị mặc định của cột và hàng trong grid là auto */
+  /* grid-template-columns: auto; */
+  /* grid-template-rows: auto; */
+  /* chia làm 2 cột, cột 1 có width: 100px, cột 2 có width 200px (nếu để 1 giá trị thì được hiểu là chia thành 1 cột) */
+  grid-template-columns: 100px 200px;
+  /* hoặc dùng hàm calc */
+  grid-template-columns: 100px calc(100% - 100px);
+  /* không set thì chiều cao dòng sẽ vừa kích thước nội dung, chia 3 dòng, dòng 1: chiều cao 50px, dòng 2: 100px, dòng 3: 50px  */
+  grid-template-rows: 50px 100px 50px;
+  /* gap dòng: quy định khoảng hở giữa các dòng */
+  /* grid-row-gap: 5px; */
+  /* gap cột: quy định khoảng hở giữa các cột */
+  /* grid-column-gap: 10px; */
+  /* Cú pháp viết tắt gap: row gap - column gap */
+  /* gap: 50px 10px; */
+  /* nếu chỉ viết tắt 1 đối số thì nó sẽ áp dụng cho cả dòng và cột */
+  /* gap: 50px; */
+  /* repeat: trong trường hợp có nhiều giá trị lặp lại thì dùng repeat */
+  /*  grid-template-columns: 100px 50px 50px 50px */
+  grid-template-columns: 100px repeat(3, 50px);
+  /*  grid-template-columns: 50px 100px 100px 100px */
+  grid-template-rows: 50px repeat(4, 100px);
+  /* Chia theo trọng số (Chiếm bao nhiêu phần) */
+  /* tổng là 3, cột 1 chiếm 1 phần (1/3), cột 2 chiếm 2 phần(2/3)*/
+  grid-template-columns: 1fr 2fr;
+  /* tổng là 7, dòng 1 chiếm 1/7, dòng 2 chiếm 2/7 , dòng 3 chiếm 4/7 */
+  grid-template-rows: 1fr 2fr 4fr;
+  /* auto */
+  /* cột 1: 100px, cột 2 chiếm 100% còn lại */
+  grid-template-columns: 100px auto;
+  /* không hoạt động với grid template rows */
+  /* dòng 1: 50px, dòng 2 chỉ cố gắng chứa vừa nội dung của nó mà thôi nên không hoạt động */
+  grid-template-rows: 50px auto;
+  /* minmax */
+  /* khi trình duyệt còn đủ chỗ chứa cột 1 chỉ dãn tối đa 300px */
+  /* co trình duyệt thu nhỏ lại đến khi chạm 150px thì dừng lại */
+  /* auto: chiếm hết 100% còn lại */
+  grid-template-columns: minmax(150px, 300px) minmax(200px, auto);
+  grid-template-rows: repeat(2, minmax(50px, 80px));
+  /* grid-auto-rows: chỉ định chiều cao mặc định, tất cả các phần tử thêm mới sẽ có chiều cao mặc định là 50px */
+  grid-auto-rows: 50px;
+}

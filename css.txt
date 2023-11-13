@@ -413,7 +413,19 @@ search box_shadow
   Flex Shrink
   Flex Basis
   Flex: cú pháp viết tắt
+  
+  2. CSS
+Grid Layout
+là 1 phương pháp sắp xếp và cấu trúc trang web dựa trên lưới
+Cho phép chia trang web thành các ô hình chữ nhật và điều khiển vị trí các phần tử trên trang
 
+1 tập hợp grid cell sẽ trở thành grid area
+
+Nếu 1 chiều thì dùng flex
+2 chiều thì dùng grid 
+Dùng grid kết hợp với flex box
+Bên ngoài 2 chiều thì dùng grid
+Bố cục bên trong 1 chiều thì dùng flex box
 
 
 
